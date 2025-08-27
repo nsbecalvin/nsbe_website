@@ -1,0 +1,86 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+.site-header {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.site-title {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.site-description {
+    font-size: 1.25rem;
+}
+
+/* Navigation */
+.main-navigation {
+    background-color: #2563eb;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.main-navigation ul {
+    list-style: none;
+}
+
+.main-navigation li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.main-navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.125rem;
+}
+
+.main-navigation a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+.front-page-section {
+    padding: 40px 20px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.front-page-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.front-page-section p {
+    font-size: 1.125rem;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e3a8a;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
