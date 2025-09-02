@@ -148,33 +148,67 @@
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         
-        /* Specific parallax sections - FIXED with fallbacks */
+        /* Specific parallax sections with multiple extension options */
         .parallax-1 .parallax-bg {
-            background-color: #002B5C; /* Fallback color */
+            background-color: #002B5C;
+            /* Try multiple extensions for the first image */
+            background-image: url('images/past leaders group shot.jpg');
             background-image: url('images/past leaders group shot.jpeg');
+            background-image: url('images/past leaders group shot.JPG');
+            background-image: url('images/past leaders group shot.JPEG');
         }
         
         .parallax-2 .parallax-bg {
-            background-color: #003366; /* Fallback color */
-            background-image: url('images/nsbe_nyc_group_shot.JPEG');
-            /* Try alternative extensions if needed */
+            background-color: #003366;
+            /* Try multiple extensions for the second image */
             background-image: url('images/nsbe_nyc_group_shot.jpg');
-            background-image: url('images/nsbe_nyc_group_shot.png');
+            background-image: url('images/nsbe_nyc_group_shot.jpeg');
+            background-image: url('images/nsbe_nyc_group_shot.JPG');
+            background-image: url('images/nsbe_nyc_group_shot.JPEG');
         }
         
         .parallax-3 .parallax-bg {
-            background-color: #002244; /* Fallback color */
+            background-color: #002244;
+            /* Try multiple extensions for the third image */
             background-image: url('images/group photo chi.jpg');
+            background-image: url('images/group photo chi.jpeg');
+            background-image: url('images/group photo chi.JPG');
+            background-image: url('images/group photo chi.JPEG');
         }
         
         .parallax-4 .parallax-bg {
-            background-color: #001122; /* Fallback color */
+            background-color: #001122;
+            /* Try multiple extensions for the fourth image */
             background-image: url('images/group photo atl.jpg');
+            background-image: url('images/group photo atl.jpeg');
+            background-image: url('images/group photo atl.JPG');
+            background-image: url('images/group photo atl.JPEG');
         }
         
         /* Debug styles to see if sections are visible */
         .parallax-section {
-            border: 1px solid transparent; /* Will show red if image fails */
+            border: 1px solid transparent;
+        }
+        
+        /* Debug message for missing images */
+        .parallax-bg::after {
+            content: "Image not loaded. Check file path and extension.";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            background: rgba(255, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            z-index: 10;
+        }
+        
+        .parallax-bg[style*="background-image:"]::after {
+            display: block;
         }
         
         /* Main Content */
@@ -614,6 +648,38 @@
                     }
                 });
             });
+            
+            // Check if images loaded successfully
+            setTimeout(function() {
+                parallaxBackgrounds.forEach((bg, index) => {
+                    if (bg) {
+                        const img = new Image();
+                        img.onload = function() {
+                            console.log('Image ' + (index + 1) + ' loaded successfully');
+                        };
+                        img.onerror = function() {
+                            console.log('Image ' + (index + 1) + ' failed to load');
+                            // Show debug message
+                            const debugMsg = document.createElement('div');
+                            debugMsg.style.position = 'absolute';
+                            debugMsg.style.top = '50%';
+                            debugMsg.style.left = '50%';
+                            debugMsg.style.transform = 'translate(-50%, -50%)';
+                            debugMsg.style.color = 'white';
+                            debugMsg.style.fontWeight = 'bold';
+                            debugMsg.style.textAlign = 'center';
+                            debugMsg.style.background = 'rgba(255, 0, 0, 0.7)';
+                            debugMsg.style.padding = '10px';
+                            debugMsg.style.borderRadius = '5px';
+                            debugMsg.style.zIndex = '10';
+                            debugMsg.textContent = 'Image failed to load. Check file path and extension.';
+                            bg.appendChild(debugMsg);
+                        };
+                        // Try to load the image
+                        img.src = bg.style.backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
+                    }
+                });
+            }, 1000);
             
             // Mobile menu toggle (could be expanded)
             const menuItems = document.querySelectorAll('.main-navigation a');
