@@ -1,17 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NSBE Calvin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="logo">NSBE</div>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <!-- Hero Section with sliding background -->
-  <div class="hero-slider">
+  <section id="home" class="hero-slider">
     <div class="slide active" style="background-image: url('https://picsum.photos/id/1015/1920/1080');"></div>
     <div class="slide" style="background-image: url('https://picsum.photos/id/1025/1920/1080');"></div>
     <div class="slide" style="background-image: url('https://picsum.photos/id/1035/1920/1080');"></div>
@@ -21,6 +29,56 @@
       <h1>National Society of Black Engineers</h1>
       <h3>Calvin University</h3>
     </div>
-  </div>
+
+    <!-- Slider controls -->
+    <div class="slider-controls">
+      <span class="prev">&#10094;</span>
+      <span class="next">&#10095;</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <h2>About Us</h2>
+    <p>
+      The National Society of Black Engineers (NSBE) at Calvin University
+      is dedicated to supporting and promoting the aspirations of collegiate
+      and pre-collegiate students and technical professionals in engineering
+      and technology.
+    </p>
+  </section>
+
+  <!-- Events Section -->
+  <section id="events" class="section events">
+    <h2>Upcoming Events</h2>
+    <div class="event-list">
+      <div class="event-card">
+        <h3>General Body Meeting</h3>
+        <p>September 15th, 2025 @ Science Building Room 123</p>
+      </div>
+      <div class="event-card">
+        <h3>Career Development Workshop</h3>
+        <p>October 5th, 2025 @ Hiemenga Hall</p>
+      </div>
+      <div class="event-card">
+        <h3>Regional Conference</h3>
+        <p>November 12th–14th, 2025 @ Detroit, MI</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <h2>Contact Us</h2>
+    <p>Email: nsbe@calvin.edu</p>
+    <p>Follow us on Instagram: <a href="https://instagram.com/nsbe_calvin" target="_blank">@nsbe_calvin</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 NSBE Calvin. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
- 
+</html>
