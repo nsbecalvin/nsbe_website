@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NSBE Organization - Home</title>
+    <title>NSBE Organization - Twenty Seventeen Inspired Theme</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset and Base Styles */
         * {
@@ -18,6 +20,7 @@
             line-height: 1.7;
             color: #333;
             background-color: #fff;
+            overflow-x: hidden;
         }
         
         a {
@@ -47,6 +50,7 @@
             background-color: #fff;
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
             position: relative;
+            z-index: 100;
         }
         
         .site-branding {
@@ -91,19 +95,28 @@
             background-color: #333;
         }
         
-        /* Hero Section */
+        /* Hero Section with Parallax */
         .hero {
             position: relative;
-            height: 80vh;
-            min-height: 400px;
+            height: 100vh;
+            min-height: 500px;
             overflow: hidden;
             background-color: #f1f1f1;
         }
         
-        .hero-image {
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: 120%;
+            background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: translateZ(0);
+            will-change: transform;
+            z-index: -1;
         }
         
         .hero-content {
@@ -111,19 +124,21 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 43, 92, 0.85);
             color: #fff;
-            padding: 2em;
+            padding: 3em 2em;
+            text-align: center;
         }
         
         .hero-title {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         
         /* Main Content */
         .main-content {
-            padding: 3em 0;
+            padding: 4em 0;
         }
         
         .content-area {
@@ -221,6 +236,29 @@
             text-align: center;
         }
         
+        /* Panel Sections (Twenty Seventeen Style) */
+        .panel {
+            padding: 5em 0;
+            position: relative;
+        }
+        
+        .panel-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .panel-title {
+            font-size: 2.2rem;
+            margin-bottom: 1em;
+            color: #002B5C;
+        }
+        
+        .panel:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .content-area,
@@ -242,6 +280,10 @@
             .main-navigation a {
                 text-align: center;
             }
+            
+            .panel {
+                padding: 3em 0;
+            }
         }
         
         /* NSBE Colors */
@@ -249,12 +291,8 @@
             color: #002B5C;
         }
         
-        .nsbe-bg-blue {
+        .bg-nsbe-blue {
             background-color: #002B5C;
-        }
-        
-        .nsbe-bg-blue:hover {
-            background-color: #00458c;
         }
         
         /* Custom Button */
@@ -267,11 +305,39 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
+            transition: all 0.3s ease;
         }
         
         .nsbe-button:hover {
             background-color: #00458c;
             color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin: 1.5em 0;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #002B5C;
+            color: white;
+            margin: 0 0.5em;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: #d54e21;
+            transform: translateY(-3px);
         }
     </style>
 </head>
@@ -299,13 +365,27 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Parallax -->
     <section class="hero">
-        <img src="https://placehold.co/1200x800/002B5C/FFFFFF/png?text=NSBE+Chapter" alt="NSBE Members" class="hero-image">
+        <div class="parallax-bg" id="parallax-bg"></div>
         <div class="hero-content">
             <div class="container">
                 <h2 class="hero-title">Advancing Black Engineers in Technology</h2>
                 <a href="#" class="nsbe-button">Join Our Chapter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel Sections (Twenty Seventeen Style) -->
+    <section class="panel">
+        <div class="panel-content">
+            <h2 class="panel-title">Our Mission</h2>
+            <p>To increase the number of culturally responsible Black engineers who excel academically, succeed professionally and positively impact the community.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </section>
@@ -386,6 +466,15 @@
         </aside>
     </div>
 
+    <!-- Another Panel Section -->
+    <section class="panel bg-nsbe-blue" style="color: white;">
+        <div class="panel-content">
+            <h2 class="panel-title" style="color: white;">Get Involved</h2>
+            <p>Join us in our mission to support Black engineering students and professionals. Whether you're a student, professional, or community member, there are many ways to get involved with our chapter.</p>
+            <a href="#" class="nsbe-button" style="background-color: white; color: #002B5C;">Learn How to Participate</a>
+        </div>
+    </section>
+
     <!-- Footer Widgets -->
     <div class="footer-widgets">
         <div class="container clearfix">
@@ -422,8 +511,15 @@
     </footer>
 
     <script>
-        // Simple JavaScript for interactive elements
+        // Parallax effect for the hero section
         document.addEventListener('DOMContentLoaded', function() {
+            const parallaxBg = document.getElementById('parallax-bg');
+            
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.pageYOffset;
+                parallaxBg.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+            });
+            
             // Mobile menu toggle (could be expanded)
             const menuItems = document.querySelectorAll('.main-navigation a');
             
@@ -467,4 +563,4 @@
         });
     </script>
 </body>
-</html>
+</html></html>
