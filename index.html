@@ -14,6 +14,10 @@
             padding: 0;
         }
         
+        html, body {
+            height: 100%;
+        }
+        
         body {
             font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
             font-size: 17px;
@@ -110,25 +114,27 @@
             left: 0;
             width: 100%;
             height: 120%;
-            background-color: #002B5C; 
-            background-image: url('./images/past leaders group shot.jpeg');
+            background-color: #002B5C;
+            background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             transform: translateZ(0);
             will-change: transform;
-            z-index: -1;
+            z-index: 1;
         }
         
         .hero-content {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
             background: rgba(0, 43, 92, 0.85);
             color: #fff;
             padding: 3em 2em;
             text-align: center;
+            z-index: 2;
         }
         
         .hero-title {
@@ -284,6 +290,10 @@
             
             .panel {
                 padding: 3em 0;
+            }
+            
+            .hero-content {
+                padding: 2em 1em;
             }
         }
         
@@ -516,10 +526,15 @@
         document.addEventListener('DOMContentLoaded', function() {
             const parallaxBg = document.getElementById('parallax-bg');
             
-            window.addEventListener('scroll', function() {
-                const scrollPosition = window.pageYOffset;
-                parallaxBg.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
-            });
+            if (parallaxBg) {
+                window.addEventListener('scroll', function() {
+                    const scrollPosition = window.pageYOffset;
+                    parallaxBg.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+                });
+                
+                // Initial positioning
+                parallaxBg.style.transform = 'translateY(0)';
+            }
             
             // Mobile menu toggle (could be expanded)
             const menuItems = document.querySelectorAll('.main-navigation a');
@@ -564,4 +579,4 @@
         });
     </script>
 </body>
-</html></html>
+</html>
