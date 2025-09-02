@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NSBE Organization - Twenty Seventeen Inspired Theme</title>
+    <title>NSBE Organization - Multiple Parallax Sections</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -108,14 +108,19 @@
             background-color: #f1f1f1;
         }
         
+        .parallax-section {
+            position: relative;
+            height: 100vh;
+            min-height: 500px;
+            overflow: hidden;
+        }
+        
         .parallax-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 120%;
-            background-color: #002B5C;
-            background-image: url('images/past leaders group shot.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -124,7 +129,7 @@
             z-index: 1;
         }
         
-        .hero-content {
+        .parallax-content {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -137,10 +142,27 @@
             z-index: 2;
         }
         
-        .hero-title {
+        .parallax-title {
             font-size: 2.8rem;
             margin-bottom: 0.5em;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Specific parallax sections */
+        .parallax-1 .parallax-bg {
+            background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+        }
+        
+        .parallax-2 .parallax-bg {
+            background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1470&q=80');
+        }
+        
+        .parallax-3 .parallax-bg {
+            background-image: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1470&q=80');
+        }
+        
+        .parallax-4 .parallax-bg {
+            background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1470&q=80');
         }
         
         /* Main Content */
@@ -276,7 +298,7 @@
                 padding: 0;
             }
             
-            .hero-title {
+            .parallax-title {
                 font-size: 1.8rem;
             }
             
@@ -292,7 +314,7 @@
                 padding: 3em 0;
             }
             
-            .hero-content {
+            .parallax-content {
                 padding: 2em 1em;
             }
         }
@@ -377,11 +399,11 @@
     </header>
 
     <!-- Hero Section with Parallax -->
-    <section class="hero">
-        <div class="parallax-bg" id="parallax-bg"></div>
-        <div class="hero-content">
+    <section class="hero parallax-1">
+        <div class="parallax-bg" id="parallax-bg-1"></div>
+        <div class="parallax-content">
             <div class="container">
-                <h2 class="hero-title">Advancing Black Engineers in Technology</h2>
+                <h2 class="parallax-title">Advancing Black Engineers in Technology</h2>
                 <a href="#" class="nsbe-button">Join Our Chapter</a>
             </div>
         </div>
@@ -397,6 +419,17 @@
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Parallax Section -->
+    <section class="parallax-section parallax-2">
+        <div class="parallax-bg" id="parallax-bg-2"></div>
+        <div class="parallax-content">
+            <div class="container">
+                <h2 class="parallax-title">Building Community Through Engineering</h2>
+                <a href="#" class="nsbe-button">See Our Events</a>
             </div>
         </div>
     </section>
@@ -477,12 +510,34 @@
         </aside>
     </div>
 
+    <!-- Third Parallax Section -->
+    <section class="parallax-section parallax-3">
+        <div class="parallax-bg" id="parallax-bg-3"></div>
+        <div class="parallax-content">
+            <div class="container">
+                <h2 class="parallax-title">Leadership Development & Professional Growth</h2>
+                <a href="#" class="nsbe-button">Meet Our Team</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Another Panel Section -->
     <section class="panel bg-nsbe-blue" style="color: white;">
         <div class="panel-content">
             <h2 class="panel-title" style="color: white;">Get Involved</h2>
             <p>Join us in our mission to support Black engineering students and professionals. Whether you're a student, professional, or community member, there are many ways to get involved with our chapter.</p>
             <a href="#" class="nsbe-button" style="background-color: white; color: #002B5C;">Learn How to Participate</a>
+        </div>
+    </section>
+
+    <!-- Fourth Parallax Section -->
+    <section class="parallax-section parallax-4">
+        <div class="parallax-bg" id="parallax-bg-4"></div>
+        <div class="parallax-content">
+            <div class="container">
+                <h2 class="parallax-title">Creating Opportunities for Success</h2>
+                <a href="#" class="nsbe-button">Support Our Chapter</a>
+            </div>
         </div>
     </section>
 
@@ -522,19 +577,28 @@
     </footer>
 
     <script>
-        // Parallax effect for the hero section
+        // Parallax effect for all parallax sections
         document.addEventListener('DOMContentLoaded', function() {
-            const parallaxBg = document.getElementById('parallax-bg');
+            // Initialize all parallax backgrounds
+            const parallaxBackgrounds = [
+                document.getElementById('parallax-bg-1'),
+                document.getElementById('parallax-bg-2'),
+                document.getElementById('parallax-bg-3'),
+                document.getElementById('parallax-bg-4')
+            ];
             
-            if (parallaxBg) {
-                window.addEventListener('scroll', function() {
-                    const scrollPosition = window.pageYOffset;
-                    parallaxBg.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
-                });
+            // Apply parallax effect to each background
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.pageYOffset;
                 
-                // Initial positioning
-                parallaxBg.style.transform = 'translateY(0)';
-            }
+                parallaxBackgrounds.forEach((bg, index) => {
+                    if (bg) {
+                        // Different speeds for different sections for a layered effect
+                        const speed = 0.5 + (index * 0.1);
+                        bg.style.transform = 'translateY(' + (scrollPosition * speed) + 'px)';
+                    }
+                });
+            });
             
             // Mobile menu toggle (could be expanded)
             const menuItems = document.querySelectorAll('.main-navigation a');
@@ -547,17 +611,17 @@
                 });
             });
             
-            // Hero section button animation
-            const heroButton = document.querySelector('.hero-content .nsbe-button');
-            if (heroButton) {
-                heroButton.addEventListener('mouseover', function() {
+            // Button animations
+            const nsbeButtons = document.querySelectorAll('.nsbe-button');
+            nsbeButtons.forEach(button => {
+                button.addEventListener('mouseover', function() {
                     this.style.transform = 'scale(1.05)';
                 });
                 
-                heroButton.addEventListener('mouseout', function() {
+                button.addEventListener('mouseout', function() {
                     this.style.transform = 'scale(1)';
                 });
-            }
+            });
             
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -579,4 +643,4 @@
         });
     </script>
 </body>
-</html>
+</html></html>
