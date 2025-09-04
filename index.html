@@ -260,38 +260,36 @@
             </div>
         </nav>
     </header>
-
-    <!-- Hero Parallax Section -->
-    <section id="parallax-1" class="parallax-section">
-        <div class="parallax-bg"></div>
-        <div class="parallax-content">
-            <h2 class="parallax-title">Advancing Black Engineers in Technology</h2>
-            <a href="#" class="nsbe-button">Join Our Chapter</a>
-        </div>
-    </section>
-
-<!-- Rotating Quotes Section -->
-<section class="quotes-section" style="padding: 4rem 0; background: #f8f9fa;">
-    <div class="container">
-        <h2 style="text-align: center; margin-bottom: 2rem; color: #002B5C;">Inspiring Words</h2>
-        <div class="quote-container" style="max-width: 800px; margin: 0 auto; text-align: center; position: relative; min-height: 200px;">
+    
+<!-- Combined Hero & Quotes Parallax Section -->
+<section id="parallax-1" class="parallax-section">
+    <div class="parallax-bg"></div>
+    <div class="parallax-content">
+        <h2 class="parallax-title">Advancing Black Engineers in Technology</h2>
+        <a href="#" class="nsbe-button">Join Our Chapter</a>
+        
+        <!-- Rotating Quotes Container -->
+        <div class="quotes-container" style="margin-top: 3rem; max-width: 800px; text-align: center; position: relative; min-height: 180px;">
+            <h3 style="color: white; margin-bottom: 1.5rem; font-size: 1.5rem;">Inspiring Words</h3>
+            
             <div class="quote active" style="opacity: 1; transition: opacity 0.5s ease;">
-                <p class="quote-text" style="font-size: 1.5rem; font-style: italic; margin-bottom: 1rem;">"Engineering is not only about solving problems, but about creating opportunities for future generations."</p>
-                <p class="quote-author" style="font-weight: bold; color: #002B5C;">- Dr. Kimberly Bryant, Founder of Black Girls CODE</p>
+                <p class="quote-text" style="font-size: 1.3rem; font-style: italic; margin-bottom: 1rem; color: white; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">"Engineering is not only about solving problems, but about creating opportunities for future generations."</p>
+                <p class="quote-author" style="font-weight: bold; color: #FFD700;">- Dr. Kimberly Bryant, Founder of Black Girls CODE</p>
             </div>
             <div class="quote" style="position: absolute; top: 0; left: 0; right: 0; opacity: 0; transition: opacity 0.5s ease;">
-                <p class="quote-text" style="font-size: 1.5rem; font-style: italic; margin-bottom: 1rem;">"Diversity in engineering leads to innovation that benefits everyone in society."</p>
-                <p class="quote-author" style="font-weight: bold; color: #002B5C;">- Johnnie Mayo Jr., NASA Engineer</p>
+                <p class="quote-text" style="font-size: 1.3rem; font-style: italic; margin-bottom: 1rem; color: white; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">"Diversity in engineering leads to innovation that benefits everyone in society."</p>
+                <p class="quote-author" style="font-weight: bold; color: #FFD700;">- Johnnie Mayo Jr., NASA Engineer</p>
             </div>
             <div class="quote" style="position: absolute; top: 0; left: 0; right: 0; opacity: 0; transition: opacity 0.5s ease;">
-                <p class="quote-text" style="font-size: 1.5rem; font-style: italic; margin-bottom: 1rem;">"The future of technology depends on including diverse perspectives at the design table."</p>
-                <p class="quote-author" style="font-weight: bold; color: #002B5C;">- Dr. Ayanna Howard, Dean of Engineering at Ohio State University</p>
+                <p class="quote-text" style="font-size: 1.3rem; font-style: italic; margin-bottom: 1rem; color: white; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">"The future of technology depends on including diverse perspectives at the design table."</p>
+                <p class="quote-author" style="font-weight: bold; color: #FFD700;">- Dr. Ayanna Howard, Dean of Engineering at Ohio State University</p>
             </div>
-            <div class="quote-nav" style="margin-top: 2rem; display: flex; justify-content: center; align-items: center;">
-                <button class="quote-prev" style="background: #002B5C; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; margin: 0 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+            
+            <div class="quote-nav" style="margin-top: 1.5rem; display: flex; justify-content: center; align-items: center;">
+                <button class="quote-prev" style="background: rgba(255, 255, 255, 0.2); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; margin: 0 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; backdrop-filter: blur(5px);">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <button class="quote-next" style="background: #002B5C; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; margin: 0 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                <button class="quote-next" style="background: rgba(255, 255, 255, 0.2); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; margin: 0 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; backdrop-filter: blur(5px);">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
@@ -302,9 +300,9 @@
 <script>
     // Rotating quotes functionality
     document.addEventListener('DOMContentLoaded', function() {
-        const quotes = document.querySelectorAll('.quote');
-        const prevBtn = document.querySelector('.quote-prev');
-        const nextBtn = document.querySelector('.quote-next');
+        const quotes = document.querySelectorAll('#parallax-1 .quote');
+        const prevBtn = document.querySelector('#parallax-1 .quote-prev');
+        const nextBtn = document.querySelector('#parallax-1 .quote-next');
         let currentQuote = 0;
         
         // Function to show a specific quote
@@ -327,15 +325,15 @@
         });
         
         // Add hover effects to buttons
-        const buttons = document.querySelectorAll('.quote-prev, .quote-next');
+        const buttons = document.querySelectorAll('#parallax-1 .quote-prev, #parallax-1 .quote-next');
         buttons.forEach(btn => {
             btn.addEventListener('mouseenter', function() {
                 this.style.transform = 'scale(1.1)';
-                this.style.backgroundColor = '#00458c';
+                this.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
             });
             btn.addEventListener('mouseleave', function() {
                 this.style.transform = 'scale(1)';
-                this.style.backgroundColor = '#002B5C';
+                this.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
             });
         });
         
