@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NSBE Organization - Multiple Parallax Sections</title>
+    <title>NSBE Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -16,9 +16,6 @@
         
         html, body {
             height: 100%;
-        }
-        
-        body {
             font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
             font-size: 17px;
             line-height: 1.7;
@@ -35,11 +32,6 @@
         
         a:hover {
             color: #d54e21;
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
         }
         
         .container {
@@ -65,6 +57,7 @@
         .site-title {
             font-size: 2.5rem;
             margin-bottom: 0.2em;
+            color: #002B5C;
         }
         
         .site-description {
@@ -99,20 +92,15 @@
             background-color: #333;
         }
         
-        /* Hero Section with Parallax */
-        .hero {
-            position: relative;
-            height: 100vh;
-            min-height: 500px;
-            overflow: hidden;
-            background-color: #f1f1f1;
-        }
-        
+        /* Parallax Sections */
         .parallax-section {
             position: relative;
             height: 100vh;
             min-height: 500px;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .parallax-bg {
@@ -120,26 +108,22 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 120%;
+            height: 100%;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            transform: translateZ(0);
-            will-change: transform;
             z-index: 1;
         }
         
         .parallax-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
+            position: relative;
             background: rgba(0, 43, 92, 0.85);
             color: #fff;
-            padding: 3em 2em;
+            padding: 3em;
             text-align: center;
             z-index: 2;
+            max-width: 800px;
+            width: 90%;
+            border-radius: 8px;
         }
         
         .parallax-title {
@@ -148,131 +132,46 @@
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         
-        /* Specific parallax sections with multiple extension options */
-        .parallax-1 .parallax-bg {
-            background-color: #002B5C;
-            /* Try multiple extensions for the first image */
-            background-image: url('images/past leaders group shot.jpg');
-            background-image: url('images/past leaders group shot.jpeg');
-            background-image: url('images/past leaders group shot.JPG');
-            background-image: url('images/past leaders group shot.JPEG');
+        /* Specific parallax sections */
+        #parallax-1 .parallax-bg {
+            background-image: url('images/past leaders group shot 2.jpeg');
         }
         
-        .parallax-2 .parallax-bg {
-            background-color: #003366;
-            /* Try multiple extensions for the second image */
-            background-image: url('images/nsbe_nyc_group_shot.jpg');
-            background-image: url('images/nsbe_nyc_group_shot.jpeg');
-            background-image: url('images/nsbe_nyc_group_shot.JPG');
+        #parallax-2 .parallax-bg {
+            background-image: url('images/past leaders group shot.jpeg');
+        }
+        
+        #parallax-3 .parallax-bg {
+            background-image: url('images/round chair leadership.jpeg');
+        }
+        
+        #parallax-4 .parallax-bg {
             background-image: url('images/nsbe_nyc_group_shot.JPEG');
         }
         
-        .parallax-3 .parallax-bg {
-            background-color: #002244;
-            /* Try multiple extensions for the third image */
-            background-image: url('images/group photo chi.jpg');
-            background-image: url('images/group photo chi.jpeg');
-            background-image: url('images/group photo chi.JPG');
-            background-image: url('images/group photo chi.JPEG');
+        /* Content Sections */
+        .content-section {
+            padding: 5em 0;
         }
         
-        .parallax-4 .parallax-bg {
-            background-color: #001122;
-            /* Try multiple extensions for the fourth image */
-            background-image: url('images/group photo atl.jpg');
-            background-image: url('images/group photo atl.jpeg');
-            background-image: url('images/group photo atl.JPG');
-            background-image: url('images/group photo atl.JPEG');
+        .content-section:nth-child(even) {
+            background-color: #f9f9f9;
         }
         
-        /* Debug styles to see if sections are visible */
-        .parallax-section {
-            border: 1px solid transparent;
-        }
-        
-        /* Debug message for missing images */
-        .parallax-bg::after {
-            content: "Image not loaded. Check file path and extension.";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-weight: bold;
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 1em;
+            color: #002B5C;
             text-align: center;
-            background: rgba(255, 0, 0, 0.7);
-            padding: 10px;
-            border-radius: 5px;
-            display: none;
-            z-index: 10;
-        }
-        
-        .parallax-bg[style*="background-image:"]::after {
-            display: block;
-        }
-        
-        /* Main Content */
-        .main-content {
-            padding: 4em 0;
-        }
-        
-        .content-area {
-            width: 70%;
-            float: left;
-        }
-        
-        .widget-area {
-            width: 28%;
-            float: right;
-            padding-left: 2%;
-        }
-        
-        /* Clearfix */
-        .clearfix:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        
-        /* Posts and Pages */
-        article {
-            margin-bottom: 3em;
-            padding-bottom: 2em;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .entry-title {
-            font-size: 2rem;
-            margin-bottom: 0.5em;
-        }
-        
-        .entry-meta {
-            color: #767676;
-            font-size: 0.9em;
-            margin-bottom: 1.5em;
-        }
-        
-        .entry-content {
-            margin-bottom: 1.5em;
-        }
-        
-        .more-link {
-            display: inline-block;
-            background-color: #222;
-            color: #fff;
-            padding: 0.5em 1em;
-            border-radius: 3px;
-            font-weight: 500;
-        }
-        
-        .more-link:hover {
-            background-color: #d54e21;
-            color: #fff;
         }
         
         /* Widgets */
         .widget {
             margin-bottom: 3em;
+            padding: 2em;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
         
         .widget-title {
@@ -280,30 +179,10 @@
             margin-bottom: 1em;
             padding-bottom: 0.5em;
             border-bottom: 2px solid #eee;
-        }
-        
-        .widget ul {
-            list-style: none;
-        }
-        
-        .widget li {
-            margin-bottom: 0.8em;
-            padding-bottom: 0.8em;
-            border-bottom: 1px solid #eee;
+            color: #002B5C;
         }
         
         /* Footer */
-        .footer-widgets {
-            background-color: #f3f3f3;
-            padding: 3em 0;
-        }
-        
-        .footer-widget-column {
-            width: 33.33%;
-            float: left;
-            padding: 0 15px;
-        }
-        
         .site-footer {
             background-color: #222;
             color: #999;
@@ -311,70 +190,7 @@
             text-align: center;
         }
         
-        /* Panel Sections (Twenty Seventeen Style) */
-        .panel {
-            padding: 5em 0;
-            position: relative;
-        }
-        
-        .panel-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-        
-        .panel-title {
-            font-size: 2.2rem;
-            margin-bottom: 1em;
-            color: #002B5C;
-        }
-        
-        .panel:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .content-area,
-            .widget-area,
-            .footer-widget-column {
-                width: 100%;
-                float: none;
-                padding: 0;
-            }
-            
-            .parallax-title {
-                font-size: 1.8rem;
-            }
-            
-            .main-navigation ul {
-                flex-direction: column;
-            }
-            
-            .main-navigation a {
-                text-align: center;
-            }
-            
-            .panel {
-                padding: 3em 0;
-            }
-            
-            .parallax-content {
-                padding: 2em 1em;
-            }
-        }
-        
-        /* NSBE Colors */
-        .nsbe-blue {
-            color: #002B5C;
-        }
-        
-        .bg-nsbe-blue {
-            background-color: #002B5C;
-        }
-        
-        /* Custom Button */
+        /* NSBE Button */
         .nsbe-button {
             display: inline-block;
             background-color: #002B5C;
@@ -385,38 +201,39 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
         
         .nsbe-button:hover {
             background-color: #00458c;
-            color: #fff;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         
-        /* Social Icons */
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            margin: 1.5em 0;
-        }
-        
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #002B5C;
-            color: white;
-            margin: 0 0.5em;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            background-color: #d54e21;
-            transform: translateY(-3px);
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .parallax-title {
+                font-size: 1.8rem;
+            }
+            
+            .main-navigation ul {
+                flex-direction: column;
+            }
+            
+            .main-navigation a {
+                text-align: center;
+                padding: 0.8em;
+            }
+            
+            .parallax-content {
+                padding: 2em 1em;
+            }
+            
+            .content-section {
+                padding: 3em 0;
+            }
         }
     </style>
 </head>
@@ -425,7 +242,7 @@
     <header>
         <div class="container">
             <div class="site-branding">
-                <h1 class="site-title"><a href="index.html" class="nsbe-blue">NSBE Chapter</a></h1>
+                <h1 class="site-title">NSBE Chapter</h1>
                 <p class="site-description">National Society of Black Engineers</p>
             </div>
         </div>
@@ -444,177 +261,75 @@
         </nav>
     </header>
 
-    <!-- Hero Section with Parallax -->
-    <section class="hero parallax-1">
-        <div class="parallax-bg" id="parallax-bg-1"></div>
+    <!-- Hero Parallax Section -->
+    <section id="parallax-1" class="parallax-section">
+        <div class="parallax-bg"></div>
         <div class="parallax-content">
-            <div class="container">
-                <h2 class="parallax-title">Advancing Black Engineers in Technology</h2>
-                <a href="#" class="nsbe-button">Join Our Chapter</a>
-            </div>
+            <h2 class="parallax-title">Advancing Black Engineers in Technology</h2>
+            <a href="#" class="nsbe-button">Join Our Chapter</a>
         </div>
     </section>
 
-    <!-- Panel Sections (Twenty Seventeen Style) -->
-    <section class="panel">
-        <div class="panel-content">
-            <h2 class="panel-title">Our Mission</h2>
+    <!-- Mission Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Our Mission</h2>
             <p>To increase the number of culturally responsible Black engineers who excel academically, succeed professionally and positively impact the community.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
         </div>
     </section>
 
     <!-- Second Parallax Section -->
-    <section class="parallax-section parallax-2">
-        <div class="parallax-bg" id="parallax-bg-2"></div>
+    <section id="parallax-2" class="parallax-section">
+        <div class="parallax-bg"></div>
         <div class="parallax-content">
-            <div class="container">
-                <h2 class="parallax-title">Building Community Through Engineering</h2>
-                <a href="#" class="nsbe-button">See Our Events</a>
-            </div>
+            <h2 class="parallax-title">Building Community Through Engineering</h2>
+            <a href="#" class="nsbe-button">See Our Events</a>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <div class="main-content container clearfix">
-        <div class="content-area">
-            <article>
-                <header class="entry-header">
-                    <h2 class="entry-title">Welcome to Our NSBE Chapter</h2>
-                    <div class="entry-meta">Posted on <a href="#">September 15, 2023</a> by <a href="#">Chapter President</a></div>
-                </header>
-                
-                <div class="entry-content">
-                    <p>We are a dedicated chapter of the National Society of Black Engineers committed to increasing the number of culturally responsible Black engineers who excel academically, succeed professionally, and positively impact the community.</p>
-                    
-                    <p>Our chapter provides academic excellence programs, professional development, and community outreach to support our members throughout their educational and professional journeys.</p>
-                    
-                    <p>We host weekly study sessions, professional development workshops, and community outreach programs throughout the academic year. All students are welcome to participate in our events and activities.</p>
-                </div>
-                
-                <footer class="entry-footer">
-                    <a href="#" class="more-link">Read More</a>
-                </footer>
-            </article>
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Welcome to Our NSBE Chapter</h2>
+            <p>We are a dedicated chapter of the National Society of Black Engineers committed to increasing the number of culturally responsible Black engineers who excel academically, succeed professionally, and positively impact the community.</p>
             
-            <article>
-                <header class="entry-header">
-                    <h2 class="entry-title">Upcoming Events: Fall 2023</h2>
-                    <div class="entry-meta">Posted on <a href="#">September 10, 2023</a> by <a href="#">Events Coordinator</a></div>
-                </header>
-                
-                <div class="entry-content">
-                    <p>Join us for our exciting lineup of events this fall semester:</p>
-                    
-                    <ul>
-                        <li><strong>September 20:</strong> Resume Workshop with Industry Professionals</li>
-                        <li><strong>October 5:</strong> Tech Company Tour - Microsoft</li>
-                        <li><strong>October 15:</strong> NSBE Study Jam for Midterms</li>
-                        <li><strong>November 3-5:</strong> Regional Conference</li>
-                        <li><strong>November 20:</strong> High School Outreach Program</li>
-                    </ul>
-                    
-                    <p>All events are free for NSBE members. Visit our events page for more details and registration information.</p>
-                </div>
-                
-                <footer class="entry-footer">
-                    <a href="#" class="more-link">View All Events</a>
-                </footer>
-            </article>
-        </div>
-        
-        <aside class="widget-area">
             <div class="widget">
                 <h3 class="widget-title">About NSBE</h3>
                 <p>The National Society of Black Engineers (NSBE) is one of the largest student-governed organizations based in the United States. NSBE has more than 600 chapters and nearly 24,000 active members in the U.S. and abroad.</p>
             </div>
-            
-            <div class="widget">
-                <h3 class="widget-title">Join Our Mailing List</h3>
-                <form>
-                    <p>Stay updated with our events and activities:</p>
-                    <input type="email" placeholder="Your email address" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd;">
-                    <button type="submit" class="nsbe-button" style="width: 100%; cursor: pointer;">Subscribe</button>
-                </form>
-            </div>
-            
-            <div class="widget">
-                <h3 class="widget-title">Quick Links</h3>
-                <ul>
-                    <li><a href="#">Membership Information</a></li>
-                    <li><a href="#">Meeting Schedule</a></li>
-                    <li><a href="#">Academic Resources</a></li>
-                    <li><a href="#">Photo Gallery</a></li>
-                    <li><a href="#">Contact Executive Board</a></li>
-                </ul>
-            </div>
-        </aside>
-    </div>
-
-    <!-- Third Parallax Section -->
-    <section class="parallax-section parallax-3">
-        <div class="parallax-bg" id="parallax-bg-3"></div>
-        <div class="parallax-content">
-            <div class="container">
-                <h2 class="parallax-title">Leadership Development & Professional Growth</h2>
-                <a href="#" class="nsbe-button">Meet Our Team</a>
-            </div>
         </div>
     </section>
 
-    <!-- Another Panel Section -->
-    <section class="panel bg-nsbe-blue" style="color: white;">
-        <div class="panel-content">
-            <h2 class="panel-title" style="color: white;">Get Involved</h2>
+    <!-- Third Parallax Section -->
+    <section id="parallax-3" class="parallax-section">
+        <div class="parallax-bg"></div>
+        <div class="parallax-content">
+            <h2 class="parallax-title">Leadership Development & Professional Growth</h2>
+            <a href="#" class="nsbe-button">Meet Our Team</a>
+        </div>
+    </section>
+
+    <!-- Get Involved Section -->
+    <section class="content-section" style="background-color: #002B5C; color: white;">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Get Involved</h2>
             <p>Join us in our mission to support Black engineering students and professionals. Whether you're a student, professional, or community member, there are many ways to get involved with our chapter.</p>
-            <a href="#" class="nsbe-button" style="background-color: white; color: #002B5C;">Learn How to Participate</a>
+            <div style="text-align: center; margin-top: 2em;">
+                <a href="#" class="nsbe-button" style="background-color: white; color: #002B5C;">Learn How to Participate</a>
+            </div>
         </div>
     </section>
 
     <!-- Fourth Parallax Section -->
-    <section class="parallax-section parallax-4">
-        <div class="parallax-bg" id="parallax-bg-4"></div>
+    <section id="parallax-4" class="parallax-section">
+        <div class="parallax-bg"></div>
         <div class="parallax-content">
-            <div class="container">
-                <h2 class="parallax-title">Creating Opportunities for Success</h2>
-                <a href="#" class="nsbe-button">Support Our Chapter</a>
-            </div>
+            <h2 class="parallax-title">Creating Opportunities for Success</h2>
+            <a href="#" class="nsbe-button">Support Our Chapter</a>
         </div>
     </section>
 
-    <!-- Footer Widgets -->
-    <div class="footer-widgets">
-        <div class="container clearfix">
-            <div class="footer-widget-column">
-                <h3>Our Mission</h3>
-                <p>To increase the number of culturally responsible Black engineers who excel academically, succeed professionally and positively impact the community.</p>
-            </div>
-            
-            <div class="footer-widget-column">
-                <h3>Connect With Us</h3>
-                <p>Follow our social media channels to stay updated with the latest news and events:</p>
-                <p>
-                    <a href="#">Instagram</a> | 
-                    <a href="#">Twitter</a> | 
-                    <a href="#">LinkedIn</a>
-                </p>
-            </div>
-            
-            <div class="footer-widget-column">
-                <h3>Contact Information</h3>
-                <p>Email: nsbechapter@yourschool.edu</p>
-                <p>Phone: (123) 456-7890</p>
-                <p>Student Union Building, Room 205</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Site Footer -->
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2023 NSBE Chapter. All rights reserved.</p>
@@ -623,102 +338,32 @@
     </footer>
 
     <script>
-        // Parallax effect for all parallax sections
+        // Simple parallax effect
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize all parallax backgrounds
-            const parallaxBackgrounds = [
-                document.getElementById('parallax-bg-1'),
-                document.getElementById('parallax-bg-2'),
-                document.getElementById('parallax-bg-3'),
-                document.getElementById('parallax-bg-4')
-            ];
+            const parallaxSections = document.querySelectorAll('.parallax-section');
             
-            // Debug: Check if elements exist
-            console.log("Parallax elements found:", parallaxBackgrounds.filter(bg => bg !== null).length);
-            
-            // Apply parallax effect to each background
             window.addEventListener('scroll', function() {
                 const scrollPosition = window.pageYOffset;
                 
-                parallaxBackgrounds.forEach((bg, index) => {
+                parallaxSections.forEach((section, index) => {
+                    const bg = section.querySelector('.parallax-bg');
                     if (bg) {
-                        // Different speeds for different sections for a layered effect
+                        // Different speeds for different sections
                         const speed = 0.5 + (index * 0.1);
-                        bg.style.transform = 'translateY(' + (scrollPosition * speed) + 'px)';
+                        bg.style.transform = `translateY(${scrollPosition * speed}px)`;
                     }
                 });
             });
             
-            // Check if images loaded successfully
-            setTimeout(function() {
-                parallaxBackgrounds.forEach((bg, index) => {
-                    if (bg) {
-                        const img = new Image();
-                        img.onload = function() {
-                            console.log('Image ' + (index + 1) + ' loaded successfully');
-                        };
-                        img.onerror = function() {
-                            console.log('Image ' + (index + 1) + ' failed to load');
-                            // Show debug message
-                            const debugMsg = document.createElement('div');
-                            debugMsg.style.position = 'absolute';
-                            debugMsg.style.top = '50%';
-                            debugMsg.style.left = '50%';
-                            debugMsg.style.transform = 'translate(-50%, -50%)';
-                            debugMsg.style.color = 'white';
-                            debugMsg.style.fontWeight = 'bold';
-                            debugMsg.style.textAlign = 'center';
-                            debugMsg.style.background = 'rgba(255, 0, 0, 0.7)';
-                            debugMsg.style.padding = '10px';
-                            debugMsg.style.borderRadius = '5px';
-                            debugMsg.style.zIndex = '10';
-                            debugMsg.textContent = 'Image failed to load. Check file path and extension.';
-                            bg.appendChild(debugMsg);
-                        };
-                        // Try to load the image
-                        img.src = bg.style.backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
-                    }
-                });
-            }, 1000);
-            
-            // Mobile menu toggle (could be expanded)
-            const menuItems = document.querySelectorAll('.main-navigation a');
-            
-            menuItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    // For demonstration, we'll just log the click
-                    console.log('Menu item clicked: ' + this.textContent);
-                    // In a real implementation, this would toggle mobile menu or similar
-                });
-            });
-            
-            // Button animations
-            const nsbeButtons = document.querySelectorAll('.nsbe-button');
-            nsbeButtons.forEach(button => {
+            // Button hover effects
+            const buttons = document.querySelectorAll('.nsbe-button');
+            buttons.forEach(button => {
                 button.addEventListener('mouseover', function() {
                     this.style.transform = 'scale(1.05)';
                 });
                 
                 button.addEventListener('mouseout', function() {
                     this.style.transform = 'scale(1)';
-                });
-            });
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }
                 });
             });
         });
