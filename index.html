@@ -270,6 +270,83 @@
         </div>
     </section>
 
+<!-- Rotating Quotes Section -->
+<section class="quotes-section" style="padding: 4rem 0; background: #f8f9fa;">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 2rem; color: #002B5C;">Inspiring Words</h2>
+        <div class="quote-container" style="max-width: 800px; margin: 0 auto; text-align: center; position: relative; min-height: 200px;">
+            <div class="quote active" style="opacity: 1; transition: opacity 0.5s ease;">
+                <p class="quote-text" style="font-size: 1.5rem; font-style: italic; margin-bottom: 1rem;">"Engineering is not only about solving problems, but about creating opportunities for future generations."</p>
+                <p class="quote-author" style="font-weight: bold; color: #002B5C;">- Dr. Kimberly Bryant, Founder of Black Girls CODE</p>
+            </div>
+            <div class="quote" style="position: absolute; top: 0; left: 0; right: 0; opacity: 0; transition: opacity 0.5s ease;">
+                <p class="quote-text" style="font-size: 1.5rem; font-style: italic; margin-bottom: 1rem;">"Diversity in engineering leads to innovation that benefits everyone in society."</p>
+                <p class="quote-author" style="font-weight: bold; color: #002B5C;">- Johnnie Mayo Jr., NASA Engineer</p>
+            </div>
+            <div class="quote" style="position: absolute; top: 0; left: 0; right: 0; opacity: 0; transition: opacity 0.5s ease;">
+                <p class="quote-text" style="font-size: 1.5rem; font-style: italic; margin-bottom: 1rem;">"The future of technology depends on including diverse perspectives at the design table."</p>
+                <p class="quote-author" style="font-weight: bold; color: #002B5C;">- Dr. Ayanna Howard, Dean of Engineering at Ohio State University</p>
+            </div>
+            <div class="quote-nav" style="margin-top: 2rem; display: flex; justify-content: center; align-items: center;">
+                <button class="quote-prev" style="background: #002B5C; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; margin: 0 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="quote-next" style="background: #002B5C; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; margin: 0 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Rotating quotes functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const quotes = document.querySelectorAll('.quote');
+        const prevBtn = document.querySelector('.quote-prev');
+        const nextBtn = document.querySelector('.quote-next');
+        let currentQuote = 0;
+        
+        // Function to show a specific quote
+        function showQuote(index) {
+            quotes.forEach(quote => quote.style.opacity = 0);
+            quotes[index].style.opacity = 1;
+            currentQuote = index;
+        }
+        
+        // Next quote button
+        nextBtn.addEventListener('click', function() {
+            let nextIndex = (currentQuote + 1) % quotes.length;
+            showQuote(nextIndex);
+        });
+        
+        // Previous quote button
+        prevBtn.addEventListener('click', function() {
+            let prevIndex = (currentQuote - 1 + quotes.length) % quotes.length;
+            showQuote(prevIndex);
+        });
+        
+        // Add hover effects to buttons
+        const buttons = document.querySelectorAll('.quote-prev, .quote-next');
+        buttons.forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+                this.style.backgroundColor = '#00458c';
+            });
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.backgroundColor = '#002B5C';
+            });
+        });
+        
+        // Auto-rotate quotes every 8 seconds
+        setInterval(function() {
+            let nextIndex = (currentQuote + 1) % quotes.length;
+            showQuote(nextIndex);
+        }, 8000);
+    });
+</script>
+
     <!-- Mission Section -->
     <section class="content-section">
         <div class="container">
