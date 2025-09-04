@@ -392,14 +392,124 @@
         </div>
     </section>
 
-    <!-- Fourth Parallax Section -->
-    <section id="parallax-4" class="parallax-section">
-        <div class="parallax-bg"></div>
-        <div class="parallax-content">
-            <h2 class="parallax-title">Creating Opportunities for Success</h2>
-            <a href="#" class="nsbe-button">Support Our Chapter</a>
+<!-- Calendar Section -->
+<section class="calendar-section" style="padding: 5rem 0; background-color: #f9f9f9;">
+    <div class="container">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 2rem; color: #002B5C;">Upcoming Events</h2>
+        
+        <div class="calendar-container" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+            <!-- Calendar -->
+            <div class="calendar" style="flex: 1; min-width: 300px; max-width: 400px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); padding: 1.5rem;">
+                <div class="calendar-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <button class="calendar-nav" style="background: #002B5C; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <h3 style="margin: 0; color: #002B5C;">September 2025</h3>
+                    <button class="calendar-nav" style="background: #002B5C; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="calendar-weekdays" style="display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-weight: bold; margin-bottom: 0.5rem;">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                
+                <div class="calendar-days" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px;">
+                    <!-- Empty days -->
+                    <div style="height: 40px;"></div>
+                    <div style="height: 40px;"></div>
+                    <div style="height: 40px;"></div>
+                    
+                    <!-- Days 1-30 -->
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">1</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">2</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; background: #e6f2ff; border-radius: 50%;">3</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; background: #e6f2ff; border-radius: 50%;">4</div>
+                    
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; background: #e6f2ff; border-radius: 50%;">5</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">6</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">7</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">8</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">9</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; background: #e6f2ff; border-radius: 50%;">10</div>
+                    
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; background: #e6f2ff; border-radius: 50%;">11</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">12</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">13</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">14</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">15</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">16</div>
+                    
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">17</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; background: #e6f2ff; border-radius: 50%;">18</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; background: #e6f2ff; border-radius: 50%;">19</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">20</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">21</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">22</div>
+                    
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">23</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">24</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">25</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">26</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">27</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">28</div>
+                    
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">29</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">30</div>
+                </div>
+            </div>
+            
+            <!-- Event List -->
+            <div class="event-list" style="flex: 1; min-width: 300px; max-width: 400px;">
+                <h3 style="color: #002B5C; margin-bottom: 1.5rem;">Today's Events - September 4, 2025</h3>
+                
+                <div class="event-item" style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <h4 style="margin: 0; color: #002B5C;">CaribSA GBM</h4>
+                        <span style="background: #002B5C; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">6:00pm</span>
+                    </div>
+                    <p style="margin: 0; color: #666;">General Body Meeting for Caribbean Student Association</p>
+                </div>
+                
+                <h3 style="color: #002B5C; margin: 2rem 0 1rem 0;">Upcoming Events</h3>
+                
+                <div class="event-item" style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <h4 style="margin: 0; color: #002B5C;">Programs Zone Meeting</h4>
+                        <span style="background: #002B5C; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Sep 5, 3:00pm</span>
+                    </div>
+                    <p style="margin: 0; color: #666;">Monthly programs committee meeting</p>
+                </div>
+                
+                <div class="event-item" style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <h4 style="margin: 0; color: #002B5C;">ASA General Body Meeting</h4>
+                        <span style="background: #002B5C; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Sep 10, 6:15pm</span>
+                    </div>
+                    <p style="margin: 0; color: #666;">African Student Association meeting</p>
+                </div>
+                
+                <div class="event-item" style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <h4 style="margin: 0; color: #002B5C;">Comms Zone Meeting</h4>
+                        <span style="background: #002B5C; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Sep 18, 6:00pm</span>
+                    </div>
+                    <p style="margin: 0; color: #666;">Communications committee meeting</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <a href="#" class="nsbe-button" style="display: inline-block;">View Full Calendar</a>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="site-footer">
