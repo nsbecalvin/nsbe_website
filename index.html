@@ -259,86 +259,14 @@
         </nav>
     </header>
 
-<!-- Combined Hero & Quotes Parallax Section -->
+<!-- Hero Parallax Section -->
 <section id="parallax-1" class="parallax-section">
     <div class="parallax-bg"></div>
     <div class="parallax-content">
-        
-        <!-- Rotating Quotes Container -->
-        <div class="quotes-container" style="margin-top: 3rem; max-width: 800px; text-align: center; position: relative; min-height: 180px;">
-            
-            <div class="quote active" style="opacity: 1; transition: opacity 0.5s ease;">
-                <p class="quote-text" style="font-size: 1.3rem; font-style: italic; margin-bottom: 1rem; color: white; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">"Engineering is not only about solving problems, but about creating opportunities for future generations."</p>
-                <p class="quote-author" style="font-weight: bold; color: #FFD700;">- Dr. Kimberly Bryant, Founder of Black Girls CODE</p>
-            </div>
-            <div class="quote" style="position: absolute; top: 0; left: 0; right: 0; opacity: 0; transition: opacity 0.5s ease;">
-                <p class="quote-text" style="font-size: 1.3rem; font-style: italic; margin-bottom: 1rem; color: white; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">"Diversity in engineering leads to innovation that benefits everyone in society."</p>
-                <p class="quote-author" style="font-weight: bold; color: #FFD700;">- Johnnie Mayo Jr., NASA Engineer</p>
-            </div>
-            <div class="quote" style="position: absolute; top: 0; left: 0; right: 0; opacity: 0; transition: opacity 0.5s ease;">
-                <p class="quote-text" style="font-size: 1.3rem; font-style: italic; margin-bottom: 1rem; color: white; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">"The future of technology depends on including diverse perspectives at the design table."</p>
-                <p class="quote-author" style="font-weight: bold; color: #FFD700;">- Dr. Ayanna Howard, Dean of Engineering at Ohio State University</p>
-            </div>
-            
-            <div class="quote-nav" style="margin-top: 1.5rem; display: flex; justify-content: center; align-items: center;">
-                <button class="quote-prev" style="background: rgba(255, 255, 255, 0.2); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; margin: 0 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; backdrop-filter: blur(5px);">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="quote-next" style="background: rgba(255, 255, 255, 0.2); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; margin: 0 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; backdrop-filter: blur(5px);">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
+        <h2 class="parallax-title">Advancing Black Engineers in Technology</h2>
+        <a href="#" class="nsbe-button">Join Our Chapter</a>
     </div>
 </section>
-
-<script>
-    // Rotating quotes functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const quotes = document.querySelectorAll('#parallax-1 .quote');
-        const prevBtn = document.querySelector('#parallax-1 .quote-prev');
-        const nextBtn = document.querySelector('#parallax-1 .quote-next');
-        let currentQuote = 0;
-        
-        // Function to show a specific quote
-        function showQuote(index) {
-            quotes.forEach(quote => quote.style.opacity = 0);
-            quotes[index].style.opacity = 1;
-            currentQuote = index;
-        }
-        
-        // Next quote button
-        nextBtn.addEventListener('click', function() {
-            let nextIndex = (currentQuote + 1) % quotes.length;
-            showQuote(nextIndex);
-        });
-        
-        // Previous quote button
-        prevBtn.addEventListener('click', function() {
-            let prevIndex = (currentQuote - 1 + quotes.length) % quotes.length;
-            showQuote(prevIndex);
-        });
-        
-        // Add hover effects to buttons
-        const buttons = document.querySelectorAll('#parallax-1 .quote-prev, #parallax-1 .quote-next');
-        buttons.forEach(btn => {
-            btn.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.1)';
-                this.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
-            });
-            btn.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1)';
-                this.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
-            });
-        });
-        
-        // Auto-rotate quotes every 8 seconds
-        setInterval(function() {
-            let nextIndex = (currentQuote + 1) % quotes.length;
-            showQuote(nextIndex);
-        }, 8000);
-    });
-</script>
 
     <!-- Mission Section -->
     <section class="content-section">
