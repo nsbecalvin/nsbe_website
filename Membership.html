@@ -102,16 +102,18 @@
 
         /* Background Image Section */
         .membership-hero {
-            position: relative;
-            height: 60vh;
-            min-height: 400px;
-            background-image: url('images/past leaders group shot 2.jpeg'); 
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+                position: relative;
+                height: 60vh;
+                min-height: 400px;
+                background-image: url('images/past leaders group shot 2.jpeg');
+                background-size: contain; /* Changed from cover to contain */
+                background-position: center;
+                background-repeat: no-repeat; /* Add this to prevent tiling */
+                background-color: #f8f8f8; /* Add background color for empty space */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
         }
 
         .membership-hero::before {
