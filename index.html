@@ -67,32 +67,38 @@
             font-weight: 300;
         }
         
-       /* Navigation */
-        .main-navigation {
-            background-color: #222;
-        }
-        
-        .main-navigation ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-        
-        .main-navigation li {
-            position: relative;
-        }
-        
-        .main-navigation a {
-            color: #fff;
-            display: block;
-            padding: 1em 1.5em;
-            font-weight: 500;
-        }
-        
-        .main-navigation a:hover {
-            background-color: #333;
-        }
-        
+/* Navigation */
+.main-navigation {
+    background-color: #222;
+    width: 100%; 
+}
+
+.main-navigation ul {
+    display: flex;
+    justify-content: center; 
+    list-style: none;
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+}
+
+.main-navigation li {
+    position: relative;
+    flex: 1;
+    text-align: center; 
+}
+.main-navigation a {
+    color: #fff;
+    display: block;
+    padding: 1em 1.5em;
+    font-weight: 500;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.main-navigation a:hover {
+    background-color: #333;
+}
         /* Parallax Sections */
         .parallax-section {
             position: relative;
@@ -249,7 +255,7 @@
                 <h1 class="site-title" style="margin: 0; font-size: 2.5rem; line-height: 1.2; font-weight: 700;"><a href="index.html" class="nsbe-blue">Calvin University's Society Of Black Engineers</a></h1>
                 <p class="site-description" style="margin: 5px 0 0 0; font-size: 1.4rem; color: #666; font-weight: 400;">National Society of Black Engineers</p>
             </div>
-        <!-- Navigation will go here if you want it on the right side -->
+        <!-- Navigation -->
     </div>
     
         <nav class="main-navigation">
