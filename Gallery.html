@@ -105,24 +105,11 @@
             position: relative;
             height: 50vh;
             min-height: 400px;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="white"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="%23f0f0f0" stroke-width="2"/></svg>'); /* Replace with your image */
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #002B5C 0%, #00458c 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-        }
-
-        .gallery-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 43, 92, 0.7);
-            z-index: 1;
         }
 
         .hero-content {
@@ -272,6 +259,20 @@
             text-align: center;
         }
 
+        /* Logo Container Fix */
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            background: #002B5C;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .main-navigation ul {
@@ -323,7 +324,9 @@
         <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 1.5rem 20px; max-width: 100%;">
             <!-- Calvin University Logo and Title -->
             <div class="logo-container" style="display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                <img src="images/f1019a4f-0f87-4b0e-aaaf-a7488b614d17_thumb.jpg" alt="Calvin University Logo" style="height: 100px; margin-right: 25px;">
+                <div class="logo-placeholder">
+                    CALVIN
+                </div>
                 <div class="site-branding">
                     <h1 class="site-title" style="margin: 0; font-size: 2.5rem; line-height: 1.2; font-weight: 700;"><a href="index.html" class="nsbe-blue">Calvin University's Society Of Black Engineers</a></h1>
                     <p class="site-description" style="margin: 5px 0 0 0; font-size: 1.4rem; color: #666; font-weight: 400;">National Society of Black Engineers</p>
@@ -371,7 +374,6 @@
         <div class="container">
             <h2 class="section-title">2023-24 Academic Year</h2>
             <div class="gallery-grid">
-                <!-- Replace these placeholders with actual images -->
                 <div class="gallery-item">
                     <div class="image-placeholder">
                         <i class="fas fa-image"></i>
@@ -453,7 +455,6 @@
                         <p>Spring 2023 - Alumni mixer</p>
                     </div>
                 </div>
-                <!-- Add more 2022-23 images as needed -->
             </div>
         </div>
     </section>
@@ -531,56 +532,7 @@
                     });
                 });
             });
-
-            // Add hover effects to gallery items
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            
-            galleryItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px)';
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
-
-            // Image loading simulation (for demo purposes)
-            setTimeout(() => {
-                const placeholders = document.querySelectorAll('.image-placeholder');
-                placeholders.forEach(placeholder => {
-                    // In a real implementation, you would replace the placeholder with actual images
-                    // placeholder.innerHTML = '<img src="images/your-image.jpg" alt="Event photo" class="gallery-image">';
-                });
-            }, 1000);
         });
-
-        // Function to add actual images (call this when you have images ready)
-        function addImageToGallery(year, imageUrl, caption, description) {
-            const gallerySection = document.getElementById(`gallery-${year}`);
-            const galleryGrid = gallerySection.querySelector('.gallery-grid');
-            
-            // Remove no-images message if it exists
-            const noImages = gallerySection.querySelector('.no-images');
-            if (noImages) {
-                noImages.remove();
-            }
-            
-            const galleryItem = document.createElement('div');
-            galleryItem.className = 'gallery-item';
-            galleryItem.innerHTML = `
-                <img src="${imageUrl}" alt="${caption}" class="gallery-image">
-                <div class="image-caption">
-                    <strong>${caption}</strong>
-                    <p>${description}</p>
-                </div>
-            `;
-            
-            galleryGrid.appendChild(galleryItem);
-        }
-
-        // Example of how to use addImageToGallery function:
-        // addImageToGallery('2024', 'images/event1.jpg', 'Fall Kickoff', 'September 2023 - Welcome back social');
     </script>
 </body>
 </html>
