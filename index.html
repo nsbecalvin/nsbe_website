@@ -335,8 +335,8 @@
             <!-- Calendar -->
             <div class="calendar" style="flex: 1; min-width: 300px; max-width: 400px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); padding: 1.5rem;">
                 <div class="calendar-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                    <!-- PREVIOUS MONTH BUTTON - Disabled for September 2025 -->
-                    <button class="calendar-nav" style="background: #ccc; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: not-allowed;" disabled>
+                    <!-- PREVIOUS MONTH BUTTON - Disabled only for September 2025 -->
+                    <button class="calendar-nav prev-month" style="background: #ccc; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: not-allowed;" disabled>
                         <i class="fas fa-chevron-left"></i>
                     </button>
                     <h3 style="margin: 0; color: #222;">September 2025</h3>
@@ -446,20 +446,51 @@
     let currentMonthIndex = 0;
     
     document.addEventListener('DOMContentLoaded', function() {
+        const prevButton = document.querySelector('.prev-month');
         const nextButton = document.querySelector('.next-month');
         const monthTitle = document.querySelector('.calendar-header h3');
         const calendarDays = document.querySelector('.calendar-days');
         
+        // Next month button functionality
         nextButton.addEventListener('click', function() {
             if (currentMonthIndex < months.length - 1) {
                 currentMonthIndex++;
                 updateCalendar();
+                
+                // Enable previous button when leaving September
+                if (currentMonthIndex > 0) {
+                    prevButton.style.background = '#222';
+                    prevButton.style.cursor = 'pointer';
+                    prevButton.disabled = false;
+                }
                 
                 // Disable next button when reaching December 2025
                 if (currentMonthIndex === months.length - 1) {
                     nextButton.style.background = '#ccc';
                     nextButton.style.cursor = 'not-allowed';
                     nextButton.disabled = true;
+                }
+            }
+        });
+        
+        // Previous month button functionality
+        prevButton.addEventListener('click', function() {
+            if (currentMonthIndex > 0) {
+                currentMonthIndex--;
+                updateCalendar();
+                
+                // Enable next button when leaving December
+                if (currentMonthIndex < months.length - 1) {
+                    nextButton.style.background = '#222';
+                    nextButton.style.cursor = 'pointer';
+                    nextButton.disabled = false;
+                }
+                
+                // Disable previous button when reaching September 2025
+                if (currentMonthIndex === 0) {
+                    prevButton.style.background = '#ccc';
+                    prevButton.style.cursor = 'not-allowed';
+                    prevButton.disabled = true;
                 }
             }
         });
@@ -502,6 +533,7 @@
         updateCalendar();
     });
 </script>
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
