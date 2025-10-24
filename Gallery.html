@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - NSBE Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset and Base Styles */
@@ -13,8 +15,9 @@
             margin: 0;
             padding: 0;
         }
-        
-        html, body {
+
+        html,
+        body {
             height: 100%;
             font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
             font-size: 17px;
@@ -23,24 +26,24 @@
             background-color: #fff;
             overflow-x: hidden;
         }
-        
+
         a {
             color: #222;
             text-decoration: none;
             transition: color 0.2s ease;
         }
-        
+
         a:hover {
             color: #d54e21;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header Styles */
         header {
             background-color: #fff;
@@ -48,64 +51,67 @@
             position: relative;
             z-index: 100;
         }
-        
+
         .site-branding {
             padding: 2em 0;
             text-align: center;
         }
-        
+
         .site-title {
             font-size: 2.5rem;
             margin-bottom: 0.2em;
             color: #222;
         }
-        
+
         .site-description {
             font-size: 1.2rem;
             color: #666;
             font-weight: 300;
         }
-        
+
         /* Navigation */
         .main-navigation {
             background-color: #222;
-            width: 100%; 
+            width: 100%;
         }
 
         .main-navigation ul {
             display: flex;
-            justify-content: center; 
+            justify-content: center;
             list-style: none;
-            margin: 0; 
-            padding: 0; 
-            width: 100%; 
+            margin: 0;
+            padding: 0;
+            width: 100%;
         }
 
         .main-navigation li {
             position: relative;
             flex: 1;
-            text-align: center; 
+            text-align: center;
         }
-        
+
         .main-navigation a {
             color: #fff;
             display: block;
             padding: 1em 1.5em;
             font-weight: 500;
-            width: 100%; 
-            box-sizing: border-box; 
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .main-navigation a:hover {
             background-color: #333;
         }
 
-        /* Gallery Hero Section */
         .gallery-hero {
             position: relative;
             height: 40vh;
             min-height: 300px;
-            background: linear-gradient(135deg, #222 0%, #00458c 100%);
+            background:
+                /* Dark blue gradient overlay for better text readability */
+                linear-gradient(135deg, rgba(0, 43, 92, 0.85) 0%, rgba(0, 69, 140, 0.85) 100%),
+                /* Your background image */
+                url('images/modern-red-and-golden-maroon-background-gold-vector-46589564.jpg.webp') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -118,12 +124,13 @@
             max-width: 800px;
             padding: 2em;
             color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .hero-title {
             font-size: 3rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         /* Main Gallery Section */
@@ -141,7 +148,7 @@
             position: relative;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             background: #222;
             aspect-ratio: 4/3;
@@ -150,7 +157,7 @@
 
         .gallery-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         .gallery-image {
@@ -188,7 +195,7 @@
             max-width: 100%;
             max-height: 80vh;
             border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .lightbox-close {
@@ -213,7 +220,8 @@
             transform: translateY(-50%);
         }
 
-        .lightbox-prev, .lightbox-next {
+        .lightbox-prev,
+        .lightbox-next {
             background: rgba(0, 43, 92, 0.7);
             color: white;
             border: none;
@@ -225,7 +233,8 @@
             transition: background 0.3s ease;
         }
 
-        .lightbox-prev:hover, .lightbox-next:hover {
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
             background: rgba(0, 43, 92, 0.9);
         }
 
@@ -256,16 +265,16 @@
             .main-navigation ul {
                 flex-direction: column;
             }
-            
+
             .main-navigation a {
                 text-align: center;
                 padding: 0.8em;
             }
-            
+
             .hero-title {
                 font-size: 2.5rem;
             }
-            
+
             .gallery-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
@@ -278,20 +287,27 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
-<header style="background-color: #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); width: 100%;">
-    <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 1.5rem 20px; max-width: 100%;">
-        <!-- Calvin University Logo and Title -->
-        <div class="logo-container" style="display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-            <img src="images/Calvin_logo.jpg" alt="Calvin University Logo" style="height: 100px; margin-right: 25px;">
-            <div class="site-branding">
-                <h1 class="site-title" style="margin: 0; font-size: 2.5rem; line-height: 1.2; font-weight: 700;"><a href="index.html" class="nsbe-blue">Calvin University's Society Of Black Engineers</a></h1>
-                <p class="site-description" style="margin: 5px 0 0 0; font-size: 1.4rem; color: #666; font-weight: 400;">A Collegiate Chapter Of The National Society Of Black Engineers</p>
+    <header style="background-color: #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); width: 100%;">
+        <div class="container"
+            style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 1.5rem 20px; max-width: 100%;">
+            <!-- Calvin University Logo and Title -->
+            <div class="logo-container"
+                style="display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                <img src="images/Calvin_logo.jpg" alt="Calvin University Logo"
+                    style="height: 100px; margin-right: 25px;">
+                <div class="site-branding">
+                    <h1 class="site-title" style="margin: 0; font-size: 2.5rem; line-height: 1.2; font-weight: 700;"><a
+                            href="index.html" class="nsbe-blue">Calvin University's Society Of Black Engineers</a></h1>
+                    <p class="site-description"
+                        style="margin: 5px 0 0 0; font-size: 1.4rem; color: #666; font-weight: 400;">A Collegiate
+                        Chapter Of The National Society Of Black Engineers</p>
+                </div>
+                <!-- Navigation -->
             </div>
-        <!-- Navigation -->
-    </div>
-    
+
             <!-- Navigation -->
             <nav class="main-navigation">
                 <div class="container">
@@ -323,15 +339,15 @@
                 <div class="gallery-item">
                     <img src="images/Gallery_Conference_atl.jpg" class="gallery-image">
                 </div>
-                
+
                 <div class="gallery-item">
-                    <img src="images/Gallery_conference.jpg"class="gallery-image">
+                    <img src="images/Gallery_conference.jpg" class="gallery-image">
                 </div>
-                
+
                 <div class="gallery-item">
                     <img src="images/Gallery sports.JPG" class="gallery-image">
                 </div>
-                
+
                 <!-- ADD MORE IMAGES BY COPYING THE ABOVE CODE -->
                 <!-- Example: -->
                 <!--
@@ -354,31 +370,50 @@
             <img src="" alt="" class="lightbox-img">
         </div>
     </div>
-
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2025-26 NSBE Chapter. All rights reserved.</p>
             <p>Part of the National Society of Black Engineers</p>
+            
+            <!-- Social Media Links -->
+            <div class="social-links" style="margin-top: 1.5rem; text-align: center;">
+                <!-- TO UPDATE SOCIAL MEDIA LINKS: Replace the # with actual URLs -->
+                <!-- Add more social media platforms by copying the <a> tag below -->
+                <a href="#" class="social-link" title="Follow us on Instagram" 
+                   style="display: inline-flex; align-items: center; gap: 0.5rem; color: white; text-decoration: none; padding: 0.5rem 1rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; transition: all 0.3s ease;">
+                    <i class="fab fa-instagram" style="font-size: 1.2rem;"></i>
+                    <span>Follow us on Instagram</span>
+                </a>
+                
+                <!-- TO ADD MORE SOCIAL MEDIA: Copy and modify the structure above -->
+                <!-- Example for future platforms:
+                <a href="#" class="social-link" title="Follow us on [Platform]" 
+                   style="display: inline-flex; align-items: center; gap: 0.5rem; color: white; text-decoration: none; padding: 0.5rem 1rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; transition: all 0.3s ease;">
+                    <i class="fab fa-[platform-name]" style="font-size: 1.2rem;"></i>
+                    <span>Follow us on [Platform]</span>
+                </a>
+                -->
+            </div>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Lightbox functionality
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.querySelector('.lightbox-img');
             const lightboxClose = document.querySelector('.lightbox-close');
             const lightboxPrev = document.querySelector('.lightbox-prev');
             const lightboxNext = document.querySelector('.lightbox-next');
-            
+
             const galleryItems = document.querySelectorAll('.gallery-item');
             let currentImageIndex = 0;
             const images = Array.from(galleryItems);
 
             // Open lightbox when image is clicked
             galleryItems.forEach((item, index) => {
-                item.addEventListener('click', function() {
+                item.addEventListener('click', function () {
                     currentImageIndex = index;
                     updateLightbox();
                     lightbox.style.display = 'flex';
@@ -387,18 +422,18 @@
             });
 
             // Close lightbox
-            lightboxClose.addEventListener('click', function() {
+            lightboxClose.addEventListener('click', function () {
                 lightbox.style.display = 'none';
                 document.body.style.overflow = 'auto'; // Re-enable scrolling
             });
 
             // Navigate lightbox
-            lightboxPrev.addEventListener('click', function() {
+            lightboxPrev.addEventListener('click', function () {
                 currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
                 updateLightbox();
             });
 
-            lightboxNext.addEventListener('click', function() {
+            lightboxNext.addEventListener('click', function () {
                 currentImageIndex = (currentImageIndex + 1) % images.length;
                 updateLightbox();
             });
@@ -406,13 +441,13 @@
             function updateLightbox() {
                 const imgSrc = images[currentImageIndex].querySelector('img').src;
                 const imgAlt = images[currentImageIndex].querySelector('img').alt;
-                
+
                 lightboxImg.src = imgSrc;
                 lightboxImg.alt = imgAlt;
             }
 
             // Close lightbox when clicking outside the image
-            lightbox.addEventListener('click', function(e) {
+            lightbox.addEventListener('click', function (e) {
                 if (e.target === lightbox) {
                     lightbox.style.display = 'none';
                     document.body.style.overflow = 'auto';
@@ -420,11 +455,27 @@
             });
 
             // Close lightbox with Escape key
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape' && lightbox.style.display === 'flex') {
                     lightbox.style.display = 'none';
                     document.body.style.overflow = 'auto';
                 }
+            });
+            
+            // Social media link hover effects
+            const socialLinks = document.querySelectorAll('.social-link');
+            socialLinks.forEach(link => {
+                link.addEventListener('mouseover', function() {
+                    this.style.background = 'rgba(255,255,255,0.1)';
+                    this.style.borderColor = 'rgba(255,255,255,0.5)';
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                link.addEventListener('mouseout', function() {
+                    this.style.background = 'transparent';
+                    this.style.borderColor = 'rgba(255,255,255,0.3)';
+                    this.style.transform = 'translateY(0)';
+                });
             });
         });
     </script>

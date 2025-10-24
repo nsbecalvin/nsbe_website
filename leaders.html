@@ -523,12 +523,31 @@
         </div>
     </div>
 </section>
-
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2025 NSBE Chapter. All rights reserved.</p>
             <p>Part of the National Society of Black Engineers</p>
+            
+            <!-- Social Media Links -->
+            <div class="social-links" style="margin-top: 1.5rem; text-align: center;">
+                <!-- TO UPDATE SOCIAL MEDIA LINKS: Replace the # with actual URLs -->
+                <!-- Add more social media platforms by copying the <a> tag below -->
+                <a href="#" class="social-link" title="Follow us on Instagram" 
+                   style="display: inline-flex; align-items: center; gap: 0.5rem; color: white; text-decoration: none; padding: 0.5rem 1rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; transition: all 0.3s ease;">
+                    <i class="fab fa-instagram" style="font-size: 1.2rem;"></i>
+                    <span>Follow us on Instagram</span>
+                </a>
+                
+                <!-- TO ADD MORE SOCIAL MEDIA: Copy and modify the structure above -->
+                <!-- Example for future platforms:
+                <a href="#" class="social-link" title="Follow us on [Platform]" 
+                   style="display: inline-flex; align-items: center; gap: 0.5rem; color: white; text-decoration: none; padding: 0.5rem 1rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; transition: all 0.3s ease;">
+                    <i class="fab fa-[platform-name]" style="font-size: 1.2rem;"></i>
+                    <span>Follow us on [Platform]</span>
+                </a>
+                -->
+            </div>
         </div>
     </footer>
 
@@ -556,8 +575,23 @@
                     });
                 });
             });
+            
+            // Social media link hover effects
+            const socialLinks = document.querySelectorAll('.social-link');
+            socialLinks.forEach(link => {
+                link.addEventListener('mouseover', function() {
+                    this.style.background = 'rgba(255,255,255,0.1)';
+                    this.style.borderColor = 'rgba(255,255,255,0.5)';
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                link.addEventListener('mouseout', function() {
+                    this.style.background = 'transparent';
+                    this.style.borderColor = 'rgba(255,255,255,0.3)';
+                    this.style.transform = 'translateY(0)';
+                });
+            });
         });
     </script>
 </body>
-
 </html>
