@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Membership - NSBE Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset and Base Styles */
@@ -13,8 +15,9 @@
             margin: 0;
             padding: 0;
         }
-        
-        html, body {
+
+        html,
+        body {
             height: 100%;
             font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
             font-size: 17px;
@@ -23,24 +26,24 @@
             background-color: #fff;
             overflow-x: hidden;
         }
-        
+
         a {
             color: #222;
             text-decoration: none;
             transition: color 0.2s ease;
         }
-        
+
         a:hover {
             color: #d54e21;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Header Styles */
         header {
             background-color: #fff;
@@ -48,52 +51,52 @@
             position: relative;
             z-index: 100;
         }
-        
+
         .site-branding {
             padding: 2em 0;
             text-align: center;
         }
-        
+
         .site-title {
             font-size: 2.5rem;
             margin-bottom: 0.2em;
             color: #222;
         }
-        
+
         .site-description {
             font-size: 1.2rem;
             color: #666;
             font-weight: 300;
         }
-        
+
         /* Navigation */
         .main-navigation {
             background-color: #222;
-            width: 100%; 
+            width: 100%;
         }
 
         .main-navigation ul {
             display: flex;
-            justify-content: center; 
+            justify-content: center;
             list-style: none;
-            margin: 0; 
-            padding: 0; 
-            width: 100%; 
+            margin: 0;
+            padding: 0;
+            width: 100%;
         }
 
         .main-navigation li {
             position: relative;
             flex: 1;
-            text-align: center; 
+            text-align: center;
         }
-        
+
         .main-navigation a {
             color: #fff;
             display: block;
             padding: 1em 1.5em;
             font-weight: 500;
-            width: 100%; 
-            box-sizing: border-box; 
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .main-navigation a:hover {
@@ -102,18 +105,18 @@
 
         /* Background Image Section */
         .membership-hero {
-                position: relative;
-                height: 85vh;
-                min-height: 600px;
-                background-image: url('images/past leaders group shot.jpeg');
-                background-size: 90%; 
-                background-position: center;
-                background-repeat: no-repeat;
-                background-color: #f8f8f8; 
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                display:flex;
+            position: relative;
+            height: 85vh;
+            min-height: 600px;
+            background-image: url('images/past leaders group shot.jpeg');
+            background-size: 90%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f8f8f8;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            display: flex;
 
         }
 
@@ -175,7 +178,7 @@
             background: white;
             padding: 2.5rem;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: transform 0.3s ease;
         }
@@ -209,7 +212,7 @@
             background: white;
             padding: 3rem;
             border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .form-title {
@@ -262,7 +265,7 @@
             font-size: 1rem;
             width: 100%;
         }
-        
+
         .nsbe-button:hover {
             background-color: #00458c;
             transform: translateY(-2px);
@@ -282,82 +285,91 @@
             .main-navigation ul {
                 flex-direction: column;
             }
-            
+
             .main-navigation a {
                 text-align: center;
                 padding: 0.8em;
             }
-            
+
             .hero-title {
                 font-size: 2rem;
             }
-            
+
             .hero-subtitle {
                 font-size: 1.1rem;
             }
-            
+
             .benefits-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .form-container {
                 padding: 2rem;
                 margin: 0 1rem;
             }
         }
+
         .parallax-section {
-    position: relative;
-    height: 100vh;
-    min-height: 500px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+            position: relative;
+            height: 100vh;
+            min-height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.parallax-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-}
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
 
-.parallax-content {
-    position: relative;
-    background: rgba(51, 51, 51, 0.85); /* Dark Grey transparent background */
-    color: #fff;
-    padding: 3em;
-    text-align: center;
-    z-index: 2;
-    max-width: 800px;
-    width: 90%;
-    border-radius: 8px;
-}
+        .parallax-content {
+            position: relative;
+            background: rgba(51, 51, 51, 0.85);
+            /* Dark Grey transparent background */
+            color: #fff;
+            padding: 3em;
+            text-align: center;
+            z-index: 2;
+            max-width: 800px;
+            width: 90%;
+            border-radius: 8px;
+        }
 
-.parallax-title {
-    font-size: 2.8rem;
-    margin-bottom: 0.5em;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
+        .parallax-title {
+            font-size: 2.8rem;
+            margin-bottom: 0.5em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header style="background-color: #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); width: 100%;">
-        <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 1.5rem 20px; max-width: 100%;">
+        <div class="container"
+            style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 1.5rem 20px; max-width: 100%;">
             <!-- Calvin University Logo and Title -->
-            <div class="logo-container" style="display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                <img src="images/f1019a4f-0f87-4b0e-aaaf-a7488b614d17_thumb.jpg" alt="Calvin University Logo" style="height: 100px; margin-right: 25px;">
+            <div class="logo-container"
+                style="display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                <img src="images/f1019a4f-0f87-4b0e-aaaf-a7488b614d17_thumb.jpg" alt="Calvin University Logo"
+                    style="height: 100px; margin-right: 25px;">
                 <div class="site-branding">
-                    <h1 class="site-title" style="margin: 0; font-size: 2.5rem; line-height: 1.2; font-weight: 700;"><a href="index.html" class="nsbe-blue">Calvin University's Society Of Black Engineers</a></h1>
-                    <p class="site-description" style="margin: 5px 0 0 0; font-size: 1.4rem; color: #666; font-weight: 400;">National Society of Black Engineers</p>
+                    <h1 class="site-title" style="margin: 0; font-size: 2.5rem; line-height: 1.2; font-weight: 700;"><a
+                            href="index.html" class="nsbe-blue">Calvin University's Society Of Black Engineers</a></h1>
+                    <p class="site-description"
+                        style="margin: 5px 0 0 0; font-size: 1.4rem; color: #666; font-weight: 400;">National Society of
+                        Black Engineers</p>
                 </div>
             </div>
-            
+
             <!-- Navigation -->
             <nav class="main-navigation">
                 <div class="container">
@@ -374,16 +386,18 @@
     </header>
 
 
-<section class="membership-hero parallax-section">
-    <div class="parallax-bg"></div>
-    <div class="parallax-content" style="text-align: center;">
-        <h1 class="parallax-title">Join NSBE Today</h1>
-        <p>Become part of a community dedicated to excellence in engineering and positive impact</p>
-        <a href="#membership-form" class="nsbe-button" style="width: auto; display: inline-block; padding: 15px 30px; margin-top: 1rem;">Apply for Membership</a>
-    </div>
-</section>
+    <section class="membership-hero parallax-section">
+        <div class="parallax-bg"></div>
+        <div class="parallax-content" style="text-align: center;">
+            <h1 class="parallax-title">Join NSBE Today</h1>
+            <p>Become part of a community dedicated to excellence in engineering and positive impact</p>
+            <a href="#membership-form" class="nsbe-button"
+                style="width: auto; display: inline-block; padding: 15px 30px; margin-top: 1rem;">Apply for
+                Membership</a>
+        </div>
+    </section>
 
-<!-- Membership Benefits Section 1 -->
+    <!-- Membership Benefits Section 1 -->
     <section class="benefits-section">
         <div class="container">
             <h2 class="section-title">Why Join NSBE?</h2>
@@ -393,23 +407,26 @@
                         <i class="fas fa-network-wired"></i>
                     </div>
                     <h3 class="benefit-title">Professional Networking</h3>
-                    <p>Connect with industry professionals, alumni, and fellow students. Build relationships that will advance your career and open doors to internship and job opportunities.</p>
+                    <p>Connect with industry professionals, alumni, and fellow students. Build relationships that will
+                        advance your career and open doors to internship and job opportunities.</p>
                 </div>
-                
+
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3 class="benefit-title">Academic Excellence</h3>
-                    <p>Access tutoring, study groups, and academic resources tailored for engineering students. Our community supports your academic journey from freshman to senior year.</p>
+                    <p>Access tutoring, study groups, and academic resources tailored for engineering students. Our
+                        community supports your academic journey from freshman to senior year.</p>
                 </div>
-                
+
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-hands-helping"></i>
                     </div>
                     <h3 class="benefit-title">Social Connections</h3>
-                    <p>Join events that celebrate our culture, strengthen community, and create lifelong friendships.</p>
+                    <p>Join events that celebrate our culture, strengthen community, and create lifelong friendships.
+                    </p>
                 </div>
             </div>
         </div>
@@ -425,12 +442,13 @@
                         <label for="fullName" class="form-label">Full Name</label>
                         <input type="text" id="fullName" name="fullName" class="form-input" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="email" class="form-label">Calvin University Email</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="name@calvin.edu" required>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="name@calvin.edu"
+                            required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="classStanding" class="form-label">Class Standing</label>
                         <select id="classStanding" name="classStanding" class="form-select" required>
@@ -442,17 +460,17 @@
                             <option value="graduate">Graduate Student</option>
                         </select>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="major" class="form-label">Major</label>
                         <input type="text" id="major" name="major" class="form-input" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="interest" class="form-label">Why are you interested in joining NSBE?</label>
                         <textarea id="interest" name="interest" class="form-input" rows="4" required></textarea>
                     </div>
-                    
+
                     <button type="submit" class="nsbe-button">Submit Application</button>
                 </form>
             </div>
@@ -469,36 +487,37 @@
 
     <script>
         // Form submission handling
-        document.getElementById('membershipApplication').addEventListener('submit', function(e) {
+        document.getElementById('membershipApplication').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Get form values
             const email = document.getElementById('email').value;
-            
+
             // Validate Calvin University email
             if (!email.endsWith('@calvin.edu')) {
                 alert('Please use your Calvin University email address (ending with @calvin.edu)');
                 return;
             }
-            
+
             // In a real application, you would send this data to a server
             alert('Thank you for your membership application! We will contact you soon.');
             this.reset();
         });
 
         // Button hover effects
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const buttons = document.querySelectorAll('.nsbe-button');
             buttons.forEach(button => {
-                button.addEventListener('mouseover', function() {
+                button.addEventListener('mouseover', function () {
                     this.style.transform = 'scale(1.05)';
                 });
-                
-                button.addEventListener('mouseout', function() {
+
+                button.addEventListener('mouseout', function () {
                     this.style.transform = 'scale(1)';
                 });
             });
         });
     </script>
 </body>
+
 </html>
