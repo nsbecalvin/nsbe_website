@@ -326,7 +326,6 @@
             </div>
         </div>
     </section>
-
 <!-- Calendar Section -->
 <section class="calendar-section" style="padding: 5rem 0; background-color: #f9f9f9;">
     <div class="container">
@@ -336,11 +335,13 @@
             <!-- Calendar -->
             <div class="calendar" style="flex: 1; min-width: 300px; max-width: 400px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); padding: 1.5rem;">
                 <div class="calendar-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                    <button class="calendar-nav" style="background: #222; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">
+                    <!-- PREVIOUS MONTH BUTTON - Disabled for September 2025 -->
+                    <button class="calendar-nav" style="background: #ccc; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: not-allowed;" disabled>
                         <i class="fas fa-chevron-left"></i>
                     </button>
                     <h3 style="margin: 0; color: #222;">September 2025</h3>
-                    <button class="calendar-nav" style="background: #222; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">
+                    <!-- NEXT MONTH BUTTON - Only enabled for Sep, Oct, Nov 2025 -->
+                    <button class="calendar-nav next-month" style="background: #222; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">
                         <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
@@ -356,45 +357,42 @@
                 </div>
                 
                 <div class="calendar-days" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px;">
-                    <!-- Empty days -->
-                    <div style="height: 40px;"></div>
-                    <div style="height: 40px;"></div>
+                    <!-- Empty days for September 2025 (starts on Monday) -->
                     <div style="height: 40px;"></div>
                     
                     <!-- Days 1-30 -->
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">1</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">2</div>
-                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; background: #e6f2ff; border-radius: 50%;">3</div>
-                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; background: #e6f2ff; border-radius: 50%;">4</div>
-                    
-                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; background: #e6f2ff; border-radius: 50%;">5</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">3</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">4</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">5</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">6</div>
+                    
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">7</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">8</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">9</div>
-                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; background: #e6f2ff; border-radius: 50%;">10</div>
-                    
-                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; background: #e6f2ff; border-radius: 50%;">11</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">10</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">11</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">12</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">13</div>
+                    
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">14</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">15</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">16</div>
-                    
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">17</div>
-                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; background: #e6f2ff; border-radius: 50%;">18</div>
-                    <div style="height: 40px; display: flex; align-items: center; justify-content: center; background: #e6f2ff; border-radius: 50%;">19</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">18</div>
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">19</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">20</div>
+                    
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">21</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">22</div>
-                    
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">23</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">24</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">25</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">26</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">27</div>
-                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">28</div>
                     
+                    <div style="height: 40px; display: flex; align-items: center; justify-content: center;">28</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">29</div>
                     <div style="height: 40px; display: flex; align-items: center; justify-content: center;">30</div>
                 </div>
@@ -402,50 +400,108 @@
             
             <!-- Event List -->
             <div class="event-list" style="flex: 1; min-width: 300px; max-width: 400px;">
-                <h3 style="color: #222; margin-bottom: 1.5rem;">Today's Events - September 4, 2025</h3>
+                <!-- TO UPDATE EVENTS: Edit the event items below -->
+                <!-- Add new events by copying the event-item structure -->
+                <!-- Remove events by deleting the entire event-item div -->
                 
-                <div class="event-item" style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <h3 style="color: #222; margin-bottom: 1.5rem;">Upcoming NSBE Events</h3>
+                
+                <!-- TO ADD/EDIT EVENTS: Update this event item -->
+                <!-- Copy this entire div to add more events -->
+                <div class="event-item" style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #002B5C;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                        <h4 style="margin: 0; color: #222;">CaribSA GBM</h4>
-                        <span style="background: #222; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">6:00pm</span>
+                        <h4 style="margin: 0; color: #222;">Resume Review & LinkedIn Help Session</h4>
+                        <span style="background: #002B5C; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Oct 24, 6:00pm</span>
                     </div>
-                    <p style="margin: 0; color: #666;">General Body Meeting for Caribbean Student Association</p>
+                    <p style="margin: 0; color: #666;">Get your resume reviewed and LinkedIn profile optimized for career success</p>
                 </div>
+                <!-- END OF EVENT ITEM - Copy above code to add more events -->
                 
-                <h3 style="color: #222; margin: 2rem 0 1rem 0;">Upcoming Events</h3>
-                
-                <div class="event-item" style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <!-- TO ADD MORE EVENTS: -->
+                <!-- 
+                <div class="event-item" style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-left: 4px solid #002B5C;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                        <h4 style="margin: 0; color: #222;">Programs Zone Meeting</h4>
-                        <span style="background: #222; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Sep 5, 3:00pm</span>
+                        <h4 style="margin: 0; color: #222;">EVENT TITLE HERE</h4>
+                        <span style="background: #002B5C; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">DATE AND TIME HERE</span>
                     </div>
-                    <p style="margin: 0; color: #666;">Monthly programs committee meeting</p>
+                    <p style="margin: 0; color: #666;">EVENT DESCRIPTION HERE</p>
                 </div>
-                
-                <div class="event-item" style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                        <h4 style="margin: 0; color: #222;">ASA General Body Meeting</h4>
-                        <span style="background: #222; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Sep 10, 6:15pm</span>
-                    </div>
-                    <p style="margin: 0; color: #666;">African Student Association meeting</p>
-                </div>
-                
-                <div class="event-item" style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                        <h4 style="margin: 0; color: #222;">Comms Zone Meeting</h4>
-                        <span style="background: #222; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Sep 18, 6:00pm</span>
-                    </div>
-                    <p style="margin: 0; color: #666;">Communications committee meeting</p>
-                </div>
-                
-                <div style="text-align: center; margin-top: 1.5rem;">
-                    <a href="#" class="nsbe-button" style="display: inline-block;">View Full Calendar</a>
-                </div>
+                -->
             </div>
         </div>
     </div>
 </section>
 
+<!-- JavaScript for Calendar Navigation -->
+<script>
+    // TO UPDATE CALENDAR RANGE: Modify the months array below
+    // Current range: September 2025 to December 2025
+    const months = [
+        { name: "September 2025", days: 30, startDay: 1 }, // Monday
+        { name: "October 2025", days: 31, startDay: 3 },   // Wednesday
+        { name: "November 2025", days: 30, startDay: 6 },  // Saturday
+        { name: "December 2025", days: 31, startDay: 1 }   // Monday
+    ];
+    
+    let currentMonthIndex = 0;
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const nextButton = document.querySelector('.next-month');
+        const monthTitle = document.querySelector('.calendar-header h3');
+        const calendarDays = document.querySelector('.calendar-days');
+        
+        nextButton.addEventListener('click', function() {
+            if (currentMonthIndex < months.length - 1) {
+                currentMonthIndex++;
+                updateCalendar();
+                
+                // Disable next button when reaching December 2025
+                if (currentMonthIndex === months.length - 1) {
+                    nextButton.style.background = '#ccc';
+                    nextButton.style.cursor = 'not-allowed';
+                    nextButton.disabled = true;
+                }
+            }
+        });
+        
+        function updateCalendar() {
+            const month = months[currentMonthIndex];
+            monthTitle.textContent = month.name;
+            
+            // Clear existing days
+            calendarDays.innerHTML = '';
+            
+            // Add empty days for alignment
+            for (let i = 0; i < month.startDay; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.style.height = '40px';
+                calendarDays.appendChild(emptyDay);
+            }
+            
+            // Add days of the month
+            for (let day = 1; day <= month.days; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.style.height = '40px';
+                dayElement.style.display = 'flex';
+                dayElement.style.alignItems = 'center';
+                dayElement.style.justifyContent = 'center';
+                dayElement.textContent = day;
+                
+                // Highlight October 24th for the Resume Review event
+                if (month.name === "October 2025" && day === 24) {
+                    dayElement.style.background = '#002B5C';
+                    dayElement.style.color = 'white';
+                    dayElement.style.borderRadius = '50%';
+                }
+                
+                calendarDays.appendChild(dayElement);
+            }
+        }
+        
+        // Initialize calendar
+        updateCalendar();
+    });
+</script>
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
