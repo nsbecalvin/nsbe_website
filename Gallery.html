@@ -103,8 +103,8 @@
         /* Gallery Hero Section */
         .gallery-hero {
             position: relative;
-            height: 50vh;
-            min-height: 400px;
+            height: 40vh;
+            min-height: 300px;
             background: linear-gradient(135deg, #222 0%, #00458c 100%);
             display: flex;
             align-items: center;
@@ -121,72 +121,20 @@
         }
 
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        .hero-subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        /* Year Navigation */
-        .year-navigation {
-            background: #f9f9f9;
-            padding: 2rem 0;
-            border-bottom: 2px solid #e0e0e0;
-        }
-
-        .year-nav-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .year-link {
-            background: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            color: #222;
-            border: 2px solid #222;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .year-link:hover,
-        .year-link.active {
-            background: #222;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 43, 92, 0.3);
-        }
-
-        /* Gallery Sections */
+        /* Main Gallery Section */
         .gallery-section {
             padding: 4rem 0;
-            display: none;
-        }
-
-        .gallery-section.active {
-            display: block;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #222;
-            text-align: center;
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
-            margin-top: 2rem;
         }
 
         .gallery-item {
@@ -197,6 +145,7 @@
             transition: all 0.3s ease;
             background: #222;
             aspect-ratio: 4/3;
+            cursor: pointer;
         }
 
         .gallery-item:hover {
@@ -215,40 +164,69 @@
             transform: scale(1.05);
         }
 
-        .image-placeholder {
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            display: flex;
-            align-items: center;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
             justify-content: center;
-            color: white;
-            font-size: 3rem;
-            background: linear-gradient(135deg, #222, #00458c);
+            align-items: center;
         }
 
-        .image-caption {
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 43, 92, 0.9);
+            top: 20px;
+            right: 20px;
             color: white;
-            padding: 1rem;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
         }
 
-        .gallery-item:hover .image-caption {
-            transform: translateY(0);
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            transform: translateY(-50%);
         }
 
-        /* No Images Message */
-        .no-images {
-            text-align: center;
-            padding: 3rem;
-            background: #f9f9f9;
-            border-radius: 10px;
-            color: #666;
+        .lightbox-prev, .lightbox-next {
+            background: rgba(0, 43, 92, 0.7);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .lightbox-prev:hover, .lightbox-next:hover {
+            background: rgba(0, 43, 92, 0.9);
         }
 
         /* Footer */
@@ -288,22 +266,8 @@
                 font-size: 2.5rem;
             }
             
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .year-nav-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .year-link {
-                width: 200px;
-                text-align: center;
-            }
-            
             .gallery-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
         }
 
@@ -311,28 +275,23 @@
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .gallery-item {
-                aspect-ratio: 1/1;
-            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header style="background-color: #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); width: 100%;">
-        <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 1.5rem 20px; max-width: 100%;">
-            <!-- Calvin University Logo and Title -->
-            <div class="logo-container" style="display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                <div class="logo-placeholder">
-                    CALVIN
-                </div>
-                <div class="site-branding">
-                    <h1 class="site-title" style="margin: 0; font-size: 2.5rem; line-height: 1.2; font-weight: 700;"><a href="index.html" class="nsbe-blue">Calvin University's Society Of Black Engineers</a></h1>
-                    <p class="site-description" style="margin: 5px 0 0 0; font-size: 1.4rem; color: #666; font-weight: 400;">National Society of Black Engineers</p>
-                </div>
+<header style="background-color: #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); width: 100%;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 1.5rem 20px; max-width: 100%;">
+        <!-- Calvin University Logo and Title -->
+        <div class="logo-container" style="display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+            <img src="images/f1019a4f-0f87-4b0e-aaaf-a7488b614d17_thumb.jpg" alt="Calvin University Logo" style="height: 100px; margin-right: 25px;">
+            <div class="site-branding">
+                <h1 class="site-title" style="margin: 0; font-size: 2.5rem; line-height: 1.2; font-weight: 700;"><a href="index.html" class="nsbe-blue">Calvin University's Society Of Black Engineers</a></h1>
+                <p class="site-description" style="margin: 5px 0 0 0; font-size: 1.4rem; color: #666; font-weight: 400;">A Collegiate Chapter Of The National Society Of Black Engineers</p>
             </div>
-            
+        <!-- Navigation -->
+    </div>
+    
             <!-- Navigation -->
             <nav class="main-navigation">
                 <div class="container">
@@ -352,185 +311,120 @@
     <section class="gallery-hero">
         <div class="hero-content">
             <h1 class="hero-title">NSBE Gallery</h1>
-            <p class="hero-subtitle">Capturing Our Journey Through the Years</p>
+            <p class="hero-subtitle" style="font-size: 1.4rem; opacity: 0.9;">Click on any image to view it larger</p>
         </div>
     </section>
 
-    <!-- Year Navigation -->
-    <section class="year-navigation">
+    <!-- Main Gallery Section -->
+    <section class="gallery-section">
         <div class="container">
-            <div class="year-nav-container">
-                <div class="year-link active" data-year="2024">2023-24</div>
-                <div class="year-link" data-year="2023">2022-23</div>
-                <div class="year-link" data-year="2022">2021-22</div>
-                <div class="year-link" data-year="2021">2020-21</div>
-                <div class="year-link" data-year="2020">2019-20</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 2023-24 Gallery -->
-    <section id="gallery-2024" class="gallery-section active">
-        <div class="container">
-            <h2 class="section-title">2023-24 Academic Year</h2>
             <div class="gallery-grid">
+                <!-- ADD YOUR IMAGES HERE -->
                 <div class="gallery-item">
-                    <div class="image-placeholder">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <div class="image-caption">
-                        <strong>Fall Kickoff Event</strong>
-                        <p>September 2023 - Welcome back social</p>
-                    </div>
+                    <img src="images/Gallery_Conference_atl.jpg" class="gallery-image">
                 </div>
+                
                 <div class="gallery-item">
-                    <div class="image-placeholder">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="image-caption">
-                        <strong>Leadership Retreat</strong>
-                        <p>October 2023 - Team building exercises</p>
-                    </div>
+                    <img src="images/Gallery_conference.jpg"class="gallery-image">
                 </div>
+                
                 <div class="gallery-item">
-                    <div class="image-placeholder">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="image-caption">
-                        <strong>Career Workshop</strong>
-                        <p>November 2023 - Resume building session</p>
-                    </div>
+                    <img src="images/Gallery sports.JPG" class="gallery-image">
                 </div>
+                
+                <!-- ADD MORE IMAGES BY COPYING THE ABOVE CODE -->
+                <!-- Example: -->
+                <!--
                 <div class="gallery-item">
-                    <div class="image-placeholder">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
-                    <div class="image-caption">
-                        <strong>Community Service</strong>
-                        <p>December 2023 - Local outreach program</p>
-                    </div>
+                    <img src="images/your-new-image.jpg" alt="Description" class="gallery-image">
                 </div>
-                <div class="gallery-item">
-                    <div class="image-placeholder">
-                        <i class="fas fa-microphone"></i>
-                    </div>
-                    <div class="image-caption">
-                        <strong>Guest Speaker</strong>
-                        <p>January 2024 - Industry professional talk</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image-placeholder">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="image-caption">
-                        <strong>NSBE Conference</strong>
-                        <p>March 2024 - National convention attendance</p>
-                    </div>
-                </div>
+                -->
             </div>
         </div>
     </section>
 
-    <!-- 2022-23 Gallery -->
-    <section id="gallery-2023" class="gallery-section">
-        <div class="container">
-            <h2 class="section-title">2022-23 Academic Year</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="image-placeholder">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <div class="image-caption">
-                        <strong>Study Sessions</strong>
-                        <p>Fall 2022 - Group study for finals</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image-placeholder">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="image-caption">
-                        <strong>Networking Event</strong>
-                        <p>Spring 2023 - Alumni mixer</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <div class="lightbox-nav">
+            <button class="lightbox-prev">&lt;</button>
+            <button class="lightbox-next">&gt;</button>
         </div>
-    </section>
-
-    <!-- 2021-22 Gallery -->
-    <section id="gallery-2022" class="gallery-section">
-        <div class="container">
-            <h2 class="section-title">2021-22 Academic Year</h2>
-            <div class="no-images">
-                <i class="fas fa-camera" style="font-size: 3rem; margin-bottom: 1rem; color: #222;"></i>
-                <h3>Photos Coming Soon</h3>
-                <p>We're gathering photos from this academic year. Check back later!</p>
-            </div>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img">
         </div>
-    </section>
-
-    <!-- 2020-21 Gallery -->
-    <section id="gallery-2021" class="gallery-section">
-        <div class="container">
-            <h2 class="section-title">2020-21 Academic Year</h2>
-            <div class="no-images">
-                <i class="fas fa-camera" style="font-size: 3rem; margin-bottom: 1rem; color: #222;"></i>
-                <h3>Photos Coming Soon</h3>
-                <p>We're gathering photos from this academic year. Check back later!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 2019-20 Gallery -->
-    <section id="gallery-2020" class="gallery-section">
-        <div class="container">
-            <h2 class="section-title">2019-20 Academic Year</h2>
-            <div class="no-images">
-                <i class="fas fa-camera" style="font-size: 3rem; margin-bottom: 1rem; color: #222;"></i>
-                <h3>Photos Coming Soon</h3>
-                <p>We're gathering photos from this academic year. Check back later!</p>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2023 NSBE Chapter. All rights reserved.</p>
+            <p>&copy; 2025-26 NSBE Chapter. All rights reserved.</p>
             <p>Part of the National Society of Black Engineers</p>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Year navigation functionality
-            const yearLinks = document.querySelectorAll('.year-link');
-            const gallerySections = document.querySelectorAll('.gallery-section');
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.querySelector('.lightbox-img');
+            const lightboxClose = document.querySelector('.lightbox-close');
+            const lightboxPrev = document.querySelector('.lightbox-prev');
+            const lightboxNext = document.querySelector('.lightbox-next');
+            
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            let currentImageIndex = 0;
+            const images = Array.from(galleryItems);
 
-            yearLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    const year = this.getAttribute('data-year');
-                    
-                    // Update active states
-                    yearLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Show corresponding gallery section
-                    gallerySections.forEach(section => {
-                        section.classList.remove('active');
-                        if (section.id === `gallery-${year}`) {
-                            section.classList.add('active');
-                        }
-                    });
-
-                    // Smooth scroll to gallery section
-                    document.getElementById(`gallery-${year}`).scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+            // Open lightbox when image is clicked
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    currentImageIndex = index;
+                    updateLightbox();
+                    lightbox.style.display = 'flex';
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
                 });
+            });
+
+            // Close lightbox
+            lightboxClose.addEventListener('click', function() {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            });
+
+            // Navigate lightbox
+            lightboxPrev.addEventListener('click', function() {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateLightbox();
+            });
+
+            lightboxNext.addEventListener('click', function() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateLightbox();
+            });
+
+            function updateLightbox() {
+                const imgSrc = images[currentImageIndex].querySelector('img').src;
+                const imgAlt = images[currentImageIndex].querySelector('img').alt;
+                
+                lightboxImg.src = imgSrc;
+                lightboxImg.alt = imgAlt;
+            }
+
+            // Close lightbox when clicking outside the image
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Close lightbox with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+                    lightbox.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
             });
         });
     </script>
