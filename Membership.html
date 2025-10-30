@@ -431,23 +431,63 @@
             </div>
         </div>
     </section>
-
- <!-- Membership Form Section -->
 <section class="membership-form-section" id="membership-form">
     <div class="container">
         <div class="form-container">
             <h2 class="form-title">Become a Member</h2>
             
-            <!-- Replace this iframe with your actual Google Form embed code -->
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScmkGbMXdcNhRcRhYShKnZGZabGhSzSUvDVGPWSLUTUcAoSjQ/viewform?embedded=true" width="640" height="1349" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            <iframe name="hiddenConfirm" style="display:none;"></iframe>
             
-            <!-- Optional: Keep your styled form as fallback -->
-            <div style="display: none;">
-                <!-- Your original form code here -->
-            </div>
+            <form action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" 
+                  method="POST" 
+                  target="hiddenConfirm"
+                  id="membershipApplication">
+                  
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" id="fullName" name="Qr4Z0d" class="form-input" required>
+                    <!-- Replace Qr4Z0d with your actual field ID -->
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email" class="form-label">Calvin University Email</label>
+                    <input type="email" id="email" name="Qr4Z0d" class="form-input" placeholder="name@calvin.edu" required>
+                    <!-- Replace AbC1d2 with your actual field ID -->
+                </div>
+
+                <!-- Class Standing -->
+                <div class="form-group">
+                    <label for="classStanding" class="form-label">Class Standing</label>
+                    <select id="classStanding" name="XyZ9w8" class="form-select" required>
+                        <option value="">Select your class standing</option>
+                        <option value="Freshman">Freshman</option>
+                        <option value="Sophomore">Sophomore</option>
+                        <option value="Junior">Junior</option>
+                        <option value="Senior">Senior</option>
+                        <option value="Graduate Student">Graduate Student</option>
+                    </select>
+                </div>
+
+                <!-- Major -->
+                <div class="form-group">
+                    <label for="major" class="form-label">Major</label>
+                    <input type="text" id="major" name="PqR7s6" class="form-input" required>
+                </div>
+
+                <!-- Interest -->
+                <div class="form-group">
+                    <label for="interest" class="form-label">Why are you interested in joining NSBE?</label>
+                    <textarea id="interest" name="MnB3v2" class="form-input" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="nsbe-button">Submit Application</button>
+            </form>
         </div>
     </div>
 </section>
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
